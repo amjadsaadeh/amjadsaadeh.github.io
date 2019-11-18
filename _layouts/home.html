@@ -23,6 +23,17 @@
         {% include thoughts.html %}
       </div>
     {% endunless %}
+
+
+    {% for page in site.pages %}
+      {% assign dir_parts = page.path | split: '/' %}
+      {% if dir_parts[0] == 'pages' %}
+        <h2>{{ page.title }}</h2>
+        <div class="text-left {{ page.class }} ">
+          {{ page.content }}
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 {% else %}
   <div class="d-md-flex min-height-full {% unless site.style == 'dark' %}border-md-bottom{% endunless %}">
@@ -47,6 +58,7 @@
         {% unless posts_total == 0 %}
           {% include thoughts.html %}
         {% endunless %}
+
       </div>
     </div>
   </div>
