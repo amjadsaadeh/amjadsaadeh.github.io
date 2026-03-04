@@ -69,18 +69,12 @@ function HomePage() {
                 style={{
                   width: 100,
                   height: 100,
-                  borderRadius: '50%',
-                  background: 'linear-gradient(135deg, ' + colors.accent + '33, ' + colors.warm + '33)',
                   padding: 3,
                   flexShrink: 0,
                 }}
               >
                 <div
                   style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                    background: colors.surfaceLight,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -90,7 +84,11 @@ function HomePage() {
                     color: colors.accent,
                   }}
                 >
-                  AS
+                  <img
+                    src="/logo.svg"
+                    alt="Amjad Saadeh Logo"
+                    style={{ width: "100%" }}
+                />
                 </div>
               </div>
               <div style={{ flex: 1, minWidth: 280 }}>
