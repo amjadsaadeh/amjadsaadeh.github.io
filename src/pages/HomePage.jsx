@@ -322,7 +322,7 @@ function HomePage() {
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/amjad-saadeh-86a934187"
+                  href="https://www.linkedin.com/in/amjad-saadeh"
                   style={{
                     fontFamily: fonts.mono,
                     fontSize: 12,

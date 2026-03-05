@@ -8,31 +8,43 @@ const timelineItems = [
   {
     period: '2023 →',
     company: 'Sennheiser',
-    role: 'Senior Software Engineer — Video Processing / Embedded',
+    role: 'Senior Software Engineer - Video Processing / Embedded AI for Unified Communication Solutions',
     color: colors.accent,
   },
   {
-    period: '2020 – 23',
+    period: '2020 - 23',
     company: 'CARIAD (VW Group)',
-    role: 'Data Scientist / ML Engineer — Autonomous Driving',
-    color: colors.warm,
-  },
-  {
-    period: '2019 – 20',
-    company: 'Carmeq GmbH',
-    role: 'ML Engineer — Driver Assistance Systems',
-    color: colors.warm,
-  },
-  {
-    period: '2017 – 19',
-    company: 'Leica Microsystems',
-    role: 'Software Engineer — Image Processing',
+    role: 'Data Scientist / ML Engineer - embedded AI for Driver Assistance Systems',
     color: colors.green,
   },
   {
-    period: '2014 – 17',
+    period: '2019 - 20',
+    company: 'Carmeq GmbH (VW Group)',
+    role: 'Data Scientist / ML Engineer - Driver Assistance Systems',
+    color: colors.green,
+  },
+  {
+    period: '2019',
+    company: 'Medneo GmbH',
+    role: 'Backend Engineer - medical imaging platform',
+    color: colors.warm,
+  },
+  {
+    period: '2017 - 19',
+    company: 'Leica Microsystems',
+    role: 'Software Engineer - Image Processing for Life Science Microscopy',
+    color: colors.accent,
+  },
+  {
+    period: '2016 - 17',
+    company: 'FERCHAU engineering GmbH - Continaental Teves AG',
+    role: 'Software Engineer for driver assistance systems',
+    color: colors.warm,
+  },
+  {
+    period: '2011 - 16',
     company: 'Freie Universität Berlin',
-    role: 'M.Sc. Computer Science — Thesis on acoustic DoA estimation',
+    role: 'B.Sc and M.Sc. Computer Science - Thesis on acoustic DoA estimation',
     color: colors.green,
   },
 ]
@@ -340,7 +352,7 @@ function AboutPage() {
             <FadeIn delay={80}>
               <ProseSection>
                 I wrote my first lines of code at 14, building websites and small apps. It was not
-                sophisticated — but it was the first time I realized I could make something out of
+                sophisticated, but it was the first time I realized I could make something out of
                 nothing but logic and patience. A great computer science teacher at school helped
                 turn that spark into a direction.
               </ProseSection>
@@ -352,7 +364,7 @@ function AboutPage() {
                 than only theorize about them, and switched to Computer Science at{' '}
                 <InlineLink href="https://www.fu-berlin.de">Freie Universität Berlin</InlineLink>.
                 That turned out to be the right call. The curriculum pushed me into unfamiliar
-                territory — from operating systems to pattern recognition — and I discovered that I
+                territory - from operating systems to pattern recognition - and I discovered that I
                 am happiest at the intersection of theory and application.
               </ProseSection>
             </FadeIn>
@@ -361,7 +373,7 @@ function AboutPage() {
               <ProseSection>
                 My master thesis became a turning point. I worked on estimating the direction of
                 traffic sounds using{' '}
-                <InlineLink href="https://github.com/amjadsaadeh">
+                <InlineLink href="https://www.inf.fu-berlin.de/inst/ag-ki/rojas_home/documents/Betreute_Arbeiten/Bachelor-Saadeh.pdf">
                   microphone arrays and statistical signal processing
                 </InlineLink>
                 . It was my first real taste of translating scientific methods into something that
@@ -370,20 +382,21 @@ function AboutPage() {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <ProseSection title="From microscopy to the road" color={colors.green}>
-                After graduating, I joined Leica Microsystems, working on image processing for
-                microscopy — 3D visualization, optical distortion correction, and early experiments
+              <ProseSection title="From the road to microscopy" color={colors.green}>
+                After graduating, I joined FERCHAU, an engineering partner of Continental Teves, and started to develop
+                advanced drivers assistance system. However, due to more interesting subjects, I switched to Leica Microsystems,
+                working on image processing for microscopy - 3D visualization, optical distortion correction, and experiments
                 with deep learning for life science applications. It was technically demanding and
-                intellectually rich, and it deepened my conviction that image processing is where I
+                intellectually rich, and it deepened my conviction that image processing and computer vision is where I
                 belong.
               </ProseSection>
             </FadeIn>
 
             <FadeIn delay={230}>
-              <ProseSection>
-                In 2019 I moved back to Berlin and into the automotive world, first at Carmeq and
-                then at CARIAD (Volkswagen Group). There, I worked on bringing machine learning into
-                advanced driver assistance systems — from feasibility studies to production-ready
+              <ProseSection title="... and back to the road" color={colors.warm}>
+                In 2019 I moved back to Berlin and into the automotive world, with a short intermezzo in medical imaging.
+                First at Carmeq and then at CARIAD (both Volkswagen Group). There, I worked on bringing machine learning into
+                advanced driver assistance systems, from feasibility studies to production-ready
                 pipelines. The work involved everything from Python prototyping to building
                 abstraction layers for running AI models on embedded hardware. It taught me a lot
                 about the gap between a working model and a shippable product.
@@ -393,8 +406,8 @@ function AboutPage() {
             <FadeIn delay={260}>
               <ProseSection title="Where I am now" color={colors.accent}>
                 Since 2023, I have been at Sennheiser, working on video processing for unified
-                communication solutions — the kind of systems found in modern meeting rooms. I
-                evaluate embedded platforms, design video processing algorithms, and shape how these
+                communication solutions - the kind of systems found in modern meeting rooms. I
+                evaluated embedded platforms, designed video processing algorithms, and shaped how these
                 products are built. It is a role that brings together nearly everything I have
                 learned: image processing, embedded systems, and the pragmatic engineering mindset
                 you need to ship real products.
@@ -405,12 +418,12 @@ function AboutPage() {
               <ProseSection title="Beyond work" color={colors.warm}>
                 I am endlessly curious outside of work too. I run a fairly involved{' '}
                 <InlineLink href="https://www.home-assistant.io">Home Assistant</InlineLink> setup,
-                I have{' '}
+                I utilize my {' '}
                 <InlineLink href="https://github.com/amjadsaadeh">
-                  trained a neural network to detect my doorbell sound
+                  machine learning and MLOps experience also in my personal projects
                 </InlineLink>{' '}
                 (because rewiring it seemed boring), and I regularly dig into topics like edge AI,
-                signal processing, and whatever else catches my attention. I also contribute to
+                signal processing, and whatever else catches my attention. I also contribute from time to time to
                 open-source projects like{' '}
                 <InlineLink href="https://github.com/bramstroker/homeassistant-powercalc">
                   Home Assistant Power Calc
@@ -431,24 +444,23 @@ function AboutPage() {
             }}
           >
             <FadeIn delay={150}>
-              <SidebarCard title="Currently reading" color={colors.warm}>
+              <SidebarCard title="Currently learning" color={colors.warm}>
                 <SidebarItem
-                  label="The Art of Doing Science and Engineering"
-                  sub="Richard Hamming"
+                  label="LLMs and their implications"
+                  sub="design system with and for LLMs"
                   color={colors.warm}
                 />
                 <SidebarItem
-                  label="Designing Data-Intensive Applications"
-                  sub="Martin Kleppmann"
+                  label="AI Agents"
+                  sub="How to build useful agents without overhyping them"
                   color={colors.warm}
                 />
               </SidebarCard>
 
               <SidebarCard title="Recently explored" color={colors.accent}>
-                <SidebarItem label="TensorRT + ONNX on ARM" sub="edge inference optimization" color={colors.accent} />
-                <SidebarItem label="AV1 codec internals" sub="video compression deep-dive" color={colors.accent} />
-                <SidebarItem label="ESPHome + BLE sensors" sub="home automation tinkering" color={colors.accent} />
-                <SidebarItem label="MUSIC algorithm variants" sub="spatial audio / DoA" color={colors.accent} />
+                <SidebarItem label="Qualcomm Neural Processing SDK" sub="edge inference optimization" color={colors.accent} />
+                <SidebarItem label="Camera Technologies" sub="optical design deep-dive" color={colors.accent} />
+                <SidebarItem label="Yocto" sub="building embedded linux distributions" color={colors.accent} />
               </SidebarCard>
 
               <SidebarCard title="Links" color={colors.green}>
@@ -470,7 +482,7 @@ function AboutPage() {
                     <span style={{ color: colors.textMuted }}>&gt;</span> GitHub
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/amjad-saadeh-86a934187"
+                    href="https://www.linkedin.com/in/amjad-saadeh"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
