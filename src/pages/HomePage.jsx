@@ -199,7 +199,7 @@ function HomePage() {
                 period="2023 &rarr;"
                 company="Sennheiser SE & Co. KG"
                 role="Senior Software Engineer - Video Processing / Embedded"
-                tags={['C++', 'OpenCV', 'Embedded', 'Video']}
+                tags={['C++', 'OpenCV', 'Embedded', 'Video', 'Qualcomm Neural Processing SDK']}
               />
               <ExpItem
                 period="2020 - 23"
@@ -221,7 +221,7 @@ function HomePage() {
               />
             </div>
             <a
-              href="/cv"
+              href="#about"
               style={{
                 fontFamily: fonts.mono,
                 fontSize: 13,

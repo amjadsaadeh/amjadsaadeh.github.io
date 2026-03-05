@@ -520,7 +520,10 @@ function AboutPage() {
 
         {/* Timeline */}
         <FadeIn delay={320}>
-          <section style={{ marginTop: 64, marginBottom: 64 }}>
+          <section
+            id="career-timeline"
+            style={{ marginTop: 64, marginBottom: 64, scrollMarginTop: 96 }}
+          >
             <SectionLabel color={colors.green}>career timeline</SectionLabel>
             <Timeline />
           </section>
