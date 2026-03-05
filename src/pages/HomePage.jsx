@@ -52,7 +52,7 @@ function HomePage() {
           </span>
           <div style={{ display: 'flex', gap: 24 }}>
             <NavLink href="#" active>home</NavLink>
-            <NavLink href="#about">about</NavLink>
+            <NavLink href="#/about">about</NavLink>
             <NavLink href="#projects">projects</NavLink>
             <NavLink href="#contact">contact</NavLink>
           </div>
@@ -158,7 +158,7 @@ function HomePage() {
               drives me is the moment where scientific ideas become something tangible and useful.
             </p>
             <a
-              href="/about"
+              href="#/about"
               style={{
                 fontFamily: fonts.mono,
                 fontSize: 13,
