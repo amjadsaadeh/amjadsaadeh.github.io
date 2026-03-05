@@ -418,11 +418,12 @@ function AboutPage() {
               <ProseSection title="Beyond work" color={colors.warm}>
                 I am endlessly curious outside of work too. I run a fairly involved{' '}
                 <InlineLink href="https://www.home-assistant.io">Home Assistant</InlineLink> setup,
+                maintain my own server infrastructure (based on k8s), and
                 I utilize my {' '}
                 <InlineLink href="https://github.com/amjadsaadeh">
                   machine learning and MLOps experience also in my personal projects
-                </InlineLink>{' '}
-                (because rewiring it seemed boring), and I regularly dig into topics like edge AI,
+                </InlineLink>{' '}.
+                I regularly dig into topics like edge AI,
                 signal processing, and whatever else catches my attention. I also contribute from time to time to
                 open-source projects like{' '}
                 <InlineLink href="https://github.com/bramstroker/homeassistant-powercalc">
