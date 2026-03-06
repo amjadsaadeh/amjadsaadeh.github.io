@@ -1,7 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 
+// During SSR, start visible so pre-rendered HTML has opacity:1 for crawlers.
+// On the client, start hidden and animate in via IntersectionObserver.
+const isSSR = typeof window === 'undefined'
+
 export default function FadeIn({ children, delay = 0, className = '' }) {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(isSSR)
   const ref = useRef()
 
   useEffect(() => {
@@ -22,6 +26,7 @@ export default function FadeIn({ children, delay = 0, className = '' }) {
     <div
       ref={ref}
       className={className}
+      suppressHydrationWarning
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(24px)',

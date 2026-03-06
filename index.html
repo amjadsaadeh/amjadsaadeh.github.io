@@ -69,9 +69,17 @@
       ]
     }
     </script>
+
+    <!-- Restore path after GitHub Pages 404 redirect -->
+    <script>
+      ;(function () {
+        var p = new URLSearchParams(window.location.search).get('p')
+        if (p) history.replaceState(null, '', p + window.location.hash)
+      })()
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--ssr-outlet--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

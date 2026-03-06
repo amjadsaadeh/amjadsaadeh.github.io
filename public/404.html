@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>saadeh.dev</title>
+    <script>
+      // GitHub Pages serves this 404.html for any unknown path (e.g. /about).
+      // Encode the original path as a query param and redirect to index.html,
+      // which decodes it and restores the URL via history.replaceState.
+      var loc = window.location
+      var path = loc.pathname.slice(1)
+      loc.replace(
+        loc.protocol + '//' + loc.host + '/?p=/' + path +
+        (loc.search ? '&' + loc.search.slice(1) : '') +
+        loc.hash
+      )
+    </script>
+  </head>
+  <body></body>
+</html>
