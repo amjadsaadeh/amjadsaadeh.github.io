@@ -180,9 +180,8 @@ function HomePage() {
           <section style={{ marginBottom: 64 }}>
             <SectionLabel color={colors.warm}>interests</SectionLabel>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'flex-start' }}>
-              <InterestCard icon="&#129504;" label="Machine Learning" color={colors.warm} />
+              <InterestCard icon="&#129504;" label="AI & Agents" color={colors.warm} />
               <InterestCard icon="&#128247;" label="Image Processing" color={colors.accent} />
-              <InterestCard icon="&#128225;" label="Signal Processing" color={colors.green} />
               <InterestCard icon="&#127919;" label="Computer Vision" color={colors.warm} />
               <InterestCard icon="&#127968;" label="Smart Home" color={colors.accent} />
               <InterestCard icon="&#129302;" label="Embedded AI" color={colors.green} />
