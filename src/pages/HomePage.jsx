@@ -221,7 +221,7 @@ function HomePage() {
               />
             </div>
             <a
-              href="#about"
+              href="/about#career-timeline"
               style={{
                 fontFamily: fonts.mono,
                 fontSize: 13,
