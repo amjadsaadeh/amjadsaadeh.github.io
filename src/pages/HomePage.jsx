@@ -255,12 +255,6 @@ function HomePage() {
                 tags={['Python', 'ML', 'Home Assistant']}
                 color={colors.warm}
               />
-              <ProjectCard
-                title="Home Assistant Power Calc"
-                description="Open-source contribution for estimating power consumption of smart home devices based on their state and known characteristics."
-                tags={['Python', 'IoT', 'Open Source']}
-                color={colors.green}
-              />
             </div>
           </section>
         </FadeIn>
