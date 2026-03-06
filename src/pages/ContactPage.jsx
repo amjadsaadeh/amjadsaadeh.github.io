@@ -148,7 +148,7 @@ function ContactPage() {
                 maxWidth: 560,
               }}
             >
-              I am happy to hear from you &mdash; whether it is about image processing, ML, embedded systems,
+              I am happy to hear from you - whether it is about Computer Vision, AI, tinkering software systems,
               or just a hello. Pick whichever channel works best for you.
             </p>
           </section>
