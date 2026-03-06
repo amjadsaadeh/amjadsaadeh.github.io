@@ -54,7 +54,7 @@ function HomePage() {
             <NavLink href="/" active>home</NavLink>
             <NavLink href="/about">about</NavLink>
             <NavLink href="#projects">projects</NavLink>
-            <NavLink href="#contact">contact</NavLink>
+            <NavLink href="/contact">contact</NavLink>
           </div>
         </div>
       </nav>

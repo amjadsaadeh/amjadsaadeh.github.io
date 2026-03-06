@@ -299,7 +299,7 @@ function AboutPage() {
             <NavLink href="/">home</NavLink>
             <NavLink href="/about" active>about</NavLink>
             <NavLink href="/#projects">projects</NavLink>
-            <NavLink href="/#contact">contact</NavLink>
+            <NavLink href="/contact">contact</NavLink>
           </div>
         </div>
       </nav>
