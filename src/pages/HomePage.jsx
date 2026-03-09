@@ -14,6 +14,10 @@ function HomePage() {
   var [card1Hovered, setCard1Hovered] = useState(false)
   var [card2Hovered, setCard2Hovered] = useState(false)
   var [card3Hovered, setCard3Hovered] = useState(false)
+  var [domain1Hovered, setDomain1Hovered] = useState(false)
+  var [domain2Hovered, setDomain2Hovered] = useState(false)
+  var [domain3Hovered, setDomain3Hovered] = useState(false)
+  var [domain4Hovered, setDomain4Hovered] = useState(false)
 
   useEffect(function() {
     var interval = setInterval(function() {
@@ -380,6 +384,230 @@ function HomePage() {
               <a href="https://github.com/amjadsaadeh" target="_blank" rel="noreferrer" style={{ color: colors.accent, textDecoration: 'none', opacity: 0.7 }}>
                 github.com/amjadsaadeh
               </a>
+            </div>
+          </section>
+        </FadeIn>
+
+        {/* Skills */}
+        <FadeIn delay={225}>
+          <section id="skills" style={{ marginBottom: 64 }}>
+            <SectionLabel>skills</SectionLabel>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 2 }}>
+
+              {/* Computer Vision */}
+              <div
+                onMouseEnter={function() { setDomain1Hovered(true) }}
+                onMouseLeave={function() { setDomain1Hovered(false) }}
+                style={{
+                  background: domain1Hovered ? colors.surfaceLight : colors.surface,
+                  border: '1px solid ' + (domain1Hovered ? colors.accent + '44' : colors.border),
+                  padding: '28px 24px 24px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'border-color 0.3s, background 0.3s',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: colors.accent, transform: domain1Hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 0.4s ease' }} />
+                <div style={{ position: 'absolute', top: -40, right: -40, width: 120, height: 120, borderRadius: '50%', background: colors.accent, opacity: domain1Hovered ? 0.08 : 0, filter: 'blur(60px)', transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 20 }}>
+                  <svg width="32" height="32" viewBox="0 0 36 36" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
+                    <circle cx="18" cy="18" r="7" stroke="#22d3ee" strokeWidth="1.5"/>
+                    <circle cx="18" cy="18" r="1.5" fill="#22d3ee"/>
+                    <path d="M18 4v4M18 28v4M4 18h4M28 18h4" stroke="#22d3ee" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+                    <path d="M9 9l2.5 2.5M24.5 24.5l2.5 2.5M9 27l2.5-2.5M24.5 11.5l2.5-2.5" stroke="#22d3ee" strokeWidth="1" strokeLinecap="round" opacity="0.3"/>
+                  </svg>
+                  <div>
+                    <div style={{ fontFamily: fonts.sans, fontSize: 17, fontWeight: 700, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>Computer Vision</div>
+                    <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, letterSpacing: '0.05em', marginTop: 3, opacity: 0.7 }}>image · video · spatial</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                  {[
+                    ['OpenCV', true], ['GStreamer', true], ['Object Detection', true], ['Segmentation', true],
+                    ['Image Registration', false], ['Camera Calibration', false], ['Phase Contrast Imaging', false],
+                    ['Fluorescence Microscopy', false], ['Visual Odometry', false], ['3D Visualization', false],
+                  ].map(function(item, i) {
+                    var label = item[0]; var core = item[1]
+                    return (
+                      <span key={i} style={{
+                        fontFamily: fonts.mono, fontSize: 10, padding: '4px 9px',
+                        border: '1px solid ' + (core ? colors.accent + '55' : 'rgba(255,255,255,0.08)'),
+                        color: core ? colors.accent : colors.text,
+                        background: core ? colors.accentDim : 'rgba(255,255,255,0.02)',
+                        letterSpacing: '0.03em',
+                      }}>{label}</span>
+                    )
+                  })}
+                </div>
+                <div style={{ position: 'absolute', bottom: 10, right: 14, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted, letterSpacing: '0.1em', opacity: 0.4 }}>CV</div>
+              </div>
+
+              {/* ML & MLOps */}
+              <div
+                onMouseEnter={function() { setDomain2Hovered(true) }}
+                onMouseLeave={function() { setDomain2Hovered(false) }}
+                style={{
+                  background: domain2Hovered ? colors.surfaceLight : colors.surface,
+                  border: '1px solid ' + (domain2Hovered ? '#9b5de544' : colors.border),
+                  padding: '28px 24px 24px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'border-color 0.3s, background 0.3s',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: '#9b5de5', transform: domain2Hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 0.4s ease' }} />
+                <div style={{ position: 'absolute', top: -40, right: -40, width: 120, height: 120, borderRadius: '50%', background: '#9b5de5', opacity: domain2Hovered ? 0.08 : 0, filter: 'blur(60px)', transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 20 }}>
+                  <svg width="32" height="32" viewBox="0 0 36 36" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
+                    <circle cx="6" cy="18" r="2" fill="#9b5de5" opacity="0.6"/>
+                    <circle cx="18" cy="6" r="2" fill="#9b5de5" opacity="0.6"/>
+                    <circle cx="30" cy="18" r="2" fill="#9b5de5" opacity="0.6"/>
+                    <circle cx="18" cy="30" r="2" fill="#9b5de5" opacity="0.6"/>
+                    <circle cx="18" cy="18" r="3" fill="#9b5de5"/>
+                    <line x1="8" y1="18" x2="15" y2="18" stroke="#9b5de5" strokeWidth="1.5" opacity="0.5"/>
+                    <line x1="21" y1="18" x2="28" y2="18" stroke="#9b5de5" strokeWidth="1.5" opacity="0.5"/>
+                    <line x1="18" y1="8" x2="18" y2="15" stroke="#9b5de5" strokeWidth="1.5" opacity="0.5"/>
+                    <line x1="18" y1="21" x2="18" y2="28" stroke="#9b5de5" strokeWidth="1.5" opacity="0.5"/>
+                    <circle cx="10" cy="10" r="1.5" fill="#9b5de5" opacity="0.4"/>
+                    <circle cx="26" cy="10" r="1.5" fill="#9b5de5" opacity="0.4"/>
+                    <circle cx="10" cy="26" r="1.5" fill="#9b5de5" opacity="0.4"/>
+                    <circle cx="26" cy="26" r="1.5" fill="#9b5de5" opacity="0.4"/>
+                  </svg>
+                  <div>
+                    <div style={{ fontFamily: fonts.sans, fontSize: 17, fontWeight: 700, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>ML & MLOps</div>
+                    <div style={{ fontFamily: fonts.mono, fontSize: 10, color: '#9b5de5', letterSpacing: '0.05em', marginTop: 3, opacity: 0.7 }}>train · version · deploy</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                  {[
+                    ['TensorFlow / tflite', true], ['Model Quantization', true], ['MLFlow', true], ['DVC', true],
+                    ['Azure ML', false], ['Scikit-learn', false], ['Keras', false], ['Continual Learning', false],
+                    ['Data Versioning', false], ['CVAT / Labelstudio', false],
+                  ].map(function(item, i) {
+                    var label = item[0]; var core = item[1]
+                    return (
+                      <span key={i} style={{
+                        fontFamily: fonts.mono, fontSize: 10, padding: '4px 9px',
+                        border: '1px solid ' + (core ? '#9b5de555' : 'rgba(255,255,255,0.08)'),
+                        color: core ? '#9b5de5' : colors.text,
+                        background: core ? 'rgba(155,93,229,0.08)' : 'rgba(255,255,255,0.02)',
+                        letterSpacing: '0.03em',
+                      }}>{label}</span>
+                    )
+                  })}
+                </div>
+                <div style={{ position: 'absolute', bottom: 10, right: 14, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted, letterSpacing: '0.1em', opacity: 0.4 }}>ML</div>
+              </div>
+
+              {/* Embedded & Edge */}
+              <div
+                onMouseEnter={function() { setDomain3Hovered(true) }}
+                onMouseLeave={function() { setDomain3Hovered(false) }}
+                style={{
+                  background: domain3Hovered ? colors.surfaceLight : colors.surface,
+                  border: '1px solid ' + (domain3Hovered ? '#f4b94244' : colors.border),
+                  padding: '28px 24px 24px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'border-color 0.3s, background 0.3s',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: '#f4b942', transform: domain3Hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 0.4s ease' }} />
+                <div style={{ position: 'absolute', top: -40, right: -40, width: 120, height: 120, borderRadius: '50%', background: '#f4b942', opacity: domain3Hovered ? 0.08 : 0, filter: 'blur(60px)', transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 20 }}>
+                  <svg width="32" height="32" viewBox="0 0 36 36" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
+                    <rect x="10" y="10" width="16" height="16" stroke="#f4b942" strokeWidth="1.5"/>
+                    <rect x="13" y="13" width="10" height="10" fill="#f4b942" opacity="0.15"/>
+                    <line x1="13" y1="7" x2="13" y2="10" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="18" y1="7" x2="18" y2="10" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="23" y1="7" x2="23" y2="10" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="13" y1="26" x2="13" y2="29" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="18" y1="26" x2="18" y2="29" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="23" y1="26" x2="23" y2="29" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="7" y1="13" x2="10" y2="13" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="7" y1="18" x2="10" y2="18" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="7" y1="23" x2="10" y2="23" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="26" y1="13" x2="29" y2="13" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="26" y1="18" x2="29" y2="18" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="26" y1="23" x2="29" y2="23" stroke="#f4b942" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  <div>
+                    <div style={{ fontFamily: fonts.sans, fontSize: 17, fontWeight: 700, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>Embedded & Edge</div>
+                    <div style={{ fontFamily: fonts.mono, fontSize: 10, color: '#f4b942', letterSpacing: '0.05em', marginTop: 3, opacity: 0.7 }}>silicon · firmware · real-time</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                  {[
+                    ['C / C++', true], ['Yocto / Bitbake', true], ['Qualcomm NPU', true], ['CMake / Conan', true],
+                    ['Texas Instruments', false], ['On-device Inference', false], ['Torch / tflite runtime', false],
+                    ['Linux Kernel', false], ['Real-time Pipelines', false],
+                  ].map(function(item, i) {
+                    var label = item[0]; var core = item[1]
+                    return (
+                      <span key={i} style={{
+                        fontFamily: fonts.mono, fontSize: 10, padding: '4px 9px',
+                        border: '1px solid ' + (core ? '#f4b94255' : 'rgba(255,255,255,0.08)'),
+                        color: core ? '#f4b942' : colors.text,
+                        background: core ? 'rgba(244,185,66,0.08)' : 'rgba(255,255,255,0.02)',
+                        letterSpacing: '0.03em',
+                      }}>{label}</span>
+                    )
+                  })}
+                </div>
+                <div style={{ position: 'absolute', bottom: 10, right: 14, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted, letterSpacing: '0.1em', opacity: 0.4 }}>EMB</div>
+              </div>
+
+              {/* Infrastructure */}
+              <div
+                onMouseEnter={function() { setDomain4Hovered(true) }}
+                onMouseLeave={function() { setDomain4Hovered(false) }}
+                style={{
+                  background: domain4Hovered ? colors.surfaceLight : colors.surface,
+                  border: '1px solid ' + (domain4Hovered ? colors.green + '44' : colors.border),
+                  padding: '28px 24px 24px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'border-color 0.3s, background 0.3s',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: colors.green, transform: domain4Hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 0.4s ease' }} />
+                <div style={{ position: 'absolute', top: -40, right: -40, width: 120, height: 120, borderRadius: '50%', background: colors.green, opacity: domain4Hovered ? 0.08 : 0, filter: 'blur(60px)', transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 20 }}>
+                  <svg width="32" height="32" viewBox="0 0 36 36" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
+                    <rect x="4" y="6" width="28" height="7" rx="1" stroke="#4ade80" strokeWidth="1.5" opacity="0.5"/>
+                    <rect x="4" y="16" width="28" height="7" rx="1" stroke="#4ade80" strokeWidth="1.5"/>
+                    <rect x="4" y="26" width="28" height="4" rx="1" stroke="#4ade80" strokeWidth="1" opacity="0.4"/>
+                    <circle cx="28" cy="9.5" r="1.5" fill="#4ade80" opacity="0.6"/>
+                    <circle cx="23" cy="9.5" r="1.5" fill="#4ade80" opacity="0.4"/>
+                    <circle cx="28" cy="19.5" r="1.5" fill="#4ade80"/>
+                    <circle cx="23" cy="19.5" r="1.5" fill="#4ade80" opacity="0.6"/>
+                  </svg>
+                  <div>
+                    <div style={{ fontFamily: fonts.sans, fontSize: 17, fontWeight: 700, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>Infrastructure</div>
+                    <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.green, letterSpacing: '0.05em', marginTop: 3, opacity: 0.7 }}>cloud · k8s · pipelines</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                  {[
+                    ['Python', true], ['Docker', true], ['k3s / Kubernetes', true], ['Azure / Terraform', true],
+                    ['PostgreSQL', false], ['Ansible', false], ['GitHub Actions', false], ['REST APIs', false],
+                    ['Linux Sysadmin', false],
+                  ].map(function(item, i) {
+                    var label = item[0]; var core = item[1]
+                    return (
+                      <span key={i} style={{
+                        fontFamily: fonts.mono, fontSize: 10, padding: '4px 9px',
+                        border: '1px solid ' + (core ? colors.green + '55' : 'rgba(255,255,255,0.08)'),
+                        color: core ? colors.green : colors.text,
+                        background: core ? colors.greenDim : 'rgba(255,255,255,0.02)',
+                        letterSpacing: '0.03em',
+                      }}>{label}</span>
+                    )
+                  })}
+                </div>
+                <div style={{ position: 'absolute', bottom: 10, right: 14, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted, letterSpacing: '0.1em', opacity: 0.4 }}>OPS</div>
+              </div>
+
             </div>
           </section>
         </FadeIn>
