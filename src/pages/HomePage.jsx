@@ -10,6 +10,10 @@ import InterestCard from '../components/InterestCard'
 
 function HomePage() {
   var [cursorBlink, setCursorBlink] = useState(true)
+  var [featHovered, setFeatHovered] = useState(false)
+  var [card1Hovered, setCard1Hovered] = useState(false)
+  var [card2Hovered, setCard2Hovered] = useState(false)
+  var [card3Hovered, setCard3Hovered] = useState(false)
 
   useEffect(function() {
     var interval = setInterval(function() {
@@ -175,8 +179,213 @@ function HomePage() {
           </section>
         </FadeIn>
 
-        {/* Interests */}
+        {/* Projects */}
         <FadeIn delay={200}>
+          <section id="projects" style={{ marginBottom: 64 }}>
+            <SectionLabel>projects</SectionLabel>
+
+            {/* Featured card */}
+            <div
+              onMouseEnter={function() { setFeatHovered(true) }}
+              onMouseLeave={function() { setFeatHovered(false) }}
+              style={{
+                position: 'relative',
+                background: colors.surface,
+                border: '1px solid ' + (featHovered ? colors.accent + '66' : colors.accent + '33'),
+                padding: '36px 36px 32px',
+                marginBottom: 2,
+                overflow: 'hidden',
+                transition: 'border-color 0.3s',
+              }}
+            >
+              {/* top gradient line */}
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(90deg, ' + colors.accent + ', transparent 60%)' }} />
+              {/* card index */}
+              <div style={{ position: 'absolute', top: 16, right: 20, fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, letterSpacing: '0.1em' }}>01 / 04</div>
+
+              {/* badges */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 18, flexWrap: 'wrap' }}>
+                {[
+                  { label: 'Featured', color: colors.accent },
+                  { label: 'Computer Vision', color: colors.accent },
+                  { label: 'Embedded AI', color: '#f4b942' },
+                ].map(function(b) {
+                  return (
+                    <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 10, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '3px 9px', border: '1px solid ' + b.color + '55', color: b.color }}>
+                      {b.label}
+                    </span>
+                  )
+                })}
+                <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid rgba(255,71,87,0.25)', color: '#ff4757', opacity: 0.8 }}>NDA</span>
+                <span style={{ fontFamily: fonts.mono, fontSize: 11, color: colors.textMuted, marginLeft: 'auto' }}>2023 – present</span>
+              </div>
+
+              <h3 style={{ fontFamily: fonts.sans, fontSize: 24, fontWeight: 700, color: '#fff', letterSpacing: '-0.02em', marginBottom: 10, lineHeight: 1.15 }}>
+                Real-Time Video AI on Qualcomm SoC
+              </h3>
+              <div style={{ fontFamily: fonts.mono, fontSize: 11.5, color: colors.accent, opacity: 0.75, marginBottom: 12, letterSpacing: '0.03em' }}>
+                {'// How do you run object detection at full framerate on a $15 chip?'}
+              </div>
+              <p style={{ fontFamily: fonts.sans, fontSize: 14, lineHeight: 1.7, color: colors.text, maxWidth: 680, marginBottom: 24, margin: '0 0 24px 0' }}>
+                Architected and shipped the full video AI pipeline for an embedded Sennheiser product — from GStreamer
+                pipeline design through custom model quantization down to on-device inference on the Qualcomm Neural
+                Processing SDK. Bridged the gap between ML research models and the constraints of a real SoC: memory
+                budget, thermal envelope, latency targets. Includes toolchain (Yocto/CMake), evaluation harness, and
+                a framework for continuous model retraining and data management.
+              </p>
+
+              {/* stack chips */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 20 }}>
+                {[
+                  ['C / C++', true], ['GStreamer', true], ['Qualcomm NPU SDK', true], ['tflite / quantization', true],
+                  ['OpenCV', false], ['Yocto', false], ['CMake', false], ['CVAT', false], ['Python', false],
+                ].map(function(item, i) {
+                  var label = item[0]; var highlight = item[1]
+                  return (
+                    <span key={i} style={{
+                      fontFamily: fonts.mono, fontSize: 10.5, padding: '3px 8px',
+                      background: highlight ? colors.accentDim : 'rgba(255,255,255,0.04)',
+                      border: '1px solid ' + (highlight ? colors.accent + '33' : 'rgba(255,255,255,0.07)'),
+                      color: highlight ? colors.accent : colors.text,
+                      letterSpacing: '0.04em',
+                    }}>{label}</span>
+                  )
+                })}
+              </div>
+
+              {/* outcome */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '12px 14px', borderLeft: '2px solid ' + colors.accent, background: colors.accentDim, fontSize: 13, color: colors.text }}>
+                <span style={{ color: colors.accent, flexShrink: 0, marginTop: 1 }}>▸</span>
+                <span>Prototype showcased internally at Sennheiser (Sept 2025) — real-time inference demonstrated live on hardware with full video pipeline running on target SoC.</span>
+              </div>
+            </div>
+
+            {/* Secondary cards grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 2, marginBottom: 2 }}>
+
+              {/* Doorbell Detector */}
+              <div
+                onMouseEnter={function() { setCard1Hovered(true) }}
+                onMouseLeave={function() { setCard1Hovered(false) }}
+                style={{
+                  background: card1Hovered ? colors.surfaceLight : colors.surface,
+                  border: '1px solid ' + (card1Hovered ? 'rgba(255,255,255,0.14)' : colors.border),
+                  borderTop: '1px solid ' + (card1Hovered ? colors.warm + '88' : colors.border),
+                  padding: '24px 20px 20px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'border-color 0.3s, background 0.3s',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 10, right: 12, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted }}>02 / 04</div>
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
+                  {[{ label: 'ML', color: colors.warm }, { label: 'Deployment', color: colors.green }, { label: 'Open Source', color: '#a8e6cf' }].map(function(b) {
+                    return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
+                  })}
+                </div>
+                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>Doorbell Detector</div>
+                <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// end-to-end ML for a real annoyance'}</div>
+                <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
+                  Sound-based ML system to detect my doorbell — covering the full lifecycle:
+                  data collection &amp; management, model training, and self-hosted deployment.
+                  A deliberately complete project, not a notebook demo.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginBottom: 10 }}>
+                  {['Python', 'Audio ML', 'Data Mgmt', 'Deployment'].map(function(t, i) {
+                    return <span key={i} style={{ fontFamily: fonts.mono, fontSize: 9.5, padding: '2px 6px', border: '1px solid ' + colors.border, color: colors.textMuted }}>{t}</span>
+                  })}
+                </div>
+                <a href="https://github.com/amjadsaadeh/doorbell-detector" target="_blank" rel="noreferrer" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
+                  github.com →
+                </a>
+              </div>
+
+              {/* ADAS MLOps Pipeline */}
+              <div
+                onMouseEnter={function() { setCard2Hovered(true) }}
+                onMouseLeave={function() { setCard2Hovered(false) }}
+                style={{
+                  background: card2Hovered ? colors.surfaceLight : colors.surface,
+                  border: '1px solid ' + (card2Hovered ? 'rgba(255,255,255,0.14)' : colors.border),
+                  borderTop: '1px solid ' + (card2Hovered ? colors.warm + '88' : colors.border),
+                  padding: '24px 20px 20px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'border-color 0.3s, background 0.3s',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 10, right: 12, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted }}>03 / 04</div>
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
+                  {[{ label: 'MLOps', color: colors.warm }, { label: 'ADAS', color: colors.accent }].map(function(b) {
+                    return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
+                  })}
+                  <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid rgba(255,71,87,0.25)', color: '#ff4757', opacity: 0.8 }}>NDA</span>
+                </div>
+                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>ADAS ML Pipeline @ CARIAD</div>
+                <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// production ML for autonomous driving data'}</div>
+                <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
+                  End-to-end automated training and evaluation pipeline for a driver-assistance function.
+                  Includes a custom time-series data management framework for large-scale car trip data,
+                  integrated with Azure ML and internal MLOps tooling.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
+                  {['Azure ML', 'Python', 'PostgreSQL', 'Terraform', 'MLFlow'].map(function(t, i) {
+                    return <span key={i} style={{ fontFamily: fonts.mono, fontSize: 9.5, padding: '2px 6px', border: '1px solid ' + colors.border, color: colors.textMuted }}>{t}</span>
+                  })}
+                </div>
+              </div>
+
+              {/* pyMUSIC */}
+              <div
+                onMouseEnter={function() { setCard3Hovered(true) }}
+                onMouseLeave={function() { setCard3Hovered(false) }}
+                style={{
+                  background: card3Hovered ? colors.surfaceLight : colors.surface,
+                  border: '1px solid ' + (card3Hovered ? 'rgba(255,255,255,0.14)' : colors.border),
+                  borderTop: '1px solid ' + (card3Hovered ? '#ff9f43' + '88' : colors.border),
+                  padding: '24px 20px 20px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'border-color 0.3s, background 0.3s',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 10, right: 12, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted }}>04 / 04</div>
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
+                  {[{ label: 'DSP', color: '#ff9f43' }, { label: 'Open Source', color: '#a8e6cf' }].map(function(b) {
+                    return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
+                  })}
+                </div>
+                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>pyMUSIC</div>
+                <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// signal subspace methods made accessible'}</div>
+                <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
+                  Clean Python implementation of the MUSIC algorithm (MUltiple SIgnal Classification)
+                  for direction-of-arrival estimation. Shows the algorithmic depth beneath the CV/ML work —
+                  rooted in classical signal processing theory.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginBottom: 10 }}>
+                  {['Python', 'NumPy', 'Array Signal Processing'].map(function(t, i) {
+                    return <span key={i} style={{ fontFamily: fonts.mono, fontSize: 9.5, padding: '2px 6px', border: '1px solid ' + colors.border, color: colors.textMuted }}>{t}</span>
+                  })}
+                </div>
+                <a href="https://github.com/amjadsaadeh/pyMUSIC" target="_blank" rel="noreferrer" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
+                  github.com →
+                </a>
+              </div>
+            </div>
+
+            {/* More bar */}
+            <div style={{ border: '1px solid ' + colors.border, background: colors.surface, padding: '16px 20px', display: 'flex', alignItems: 'center', gap: 10, fontFamily: fonts.mono, fontSize: 11, color: colors.textMuted, flexWrap: 'wrap' }}>
+              <span style={{ color: colors.accent, opacity: 0.5 }}>▸</span>
+              More experiments and open-source contributions on{' '}
+              <a href="https://github.com/amjadsaadeh" target="_blank" rel="noreferrer" style={{ color: colors.accent, textDecoration: 'none', opacity: 0.7 }}>
+                github.com/amjadsaadeh
+              </a>
+            </div>
+          </section>
+        </FadeIn>
+
+        {/* Interests */}
+        <FadeIn delay={250}>
           <section style={{ marginBottom: 64 }}>
             <SectionLabel color={colors.warm}>interests</SectionLabel>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'flex-start' }}>
@@ -190,7 +399,7 @@ function HomePage() {
         </FadeIn>
 
         {/* Experience */}
-        <FadeIn delay={250}>
+        <FadeIn delay={300}>
           <section style={{ marginBottom: 64 }}>
             <SectionLabel color={colors.green}>experience</SectionLabel>
             <div>
@@ -234,27 +443,6 @@ function HomePage() {
             >
               {'>'} full CV &rarr;
             </a>
-          </section>
-        </FadeIn>
-
-        {/* Projects */}
-        <FadeIn delay={300}>
-          <section id="projects" style={{ marginBottom: 64 }}>
-            <SectionLabel>projects</SectionLabel>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
-              <ProjectCard
-                title="DoA Estimation with MUSIC Algorithm"
-                description="Master thesis: estimating the direction of arrival of traffic objects using acoustic data from a microphone array and statistical analysis."
-                tags={['Rust', 'Signal Processing', 'Statistics']}
-                color={colors.accent}
-              />
-              <ProjectCard
-                title="Doorbell Detector"
-                description="Full lifecycle ML project - instead of rewiring my doorbell, I trained a model to recognize its sound and trigger smart home automations."
-                tags={['Python', 'ML', 'Home Assistant']}
-                color={colors.warm}
-              />
-            </div>
           </section>
         </FadeIn>
 
