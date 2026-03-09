@@ -224,14 +224,14 @@ function HomePage() {
                 Real-Time Video AI on Qualcomm SoC
               </h3>
               <div style={{ fontFamily: fonts.mono, fontSize: 11.5, color: colors.accent, opacity: 0.75, marginBottom: 12, letterSpacing: '0.03em' }}>
-                {'// How do you run object detection at full framerate on a $15 chip?'}
+                {'// How do you run object detection at full framerate on embedded hardware?'}
               </div>
               <p style={{ fontFamily: fonts.sans, fontSize: 14, lineHeight: 1.7, color: colors.text, maxWidth: 680, marginBottom: 24, margin: '0 0 24px 0' }}>
-                Architected and shipped the full video AI pipeline for an embedded Sennheiser product — from GStreamer
+                Architected and shipped the full video AI pipeline for an embedded product — from GStreamer
                 pipeline design through custom model quantization down to on-device inference on the Qualcomm Neural
-                Processing SDK. Bridged the gap between ML research models and the constraints of a real SoC: memory
-                budget, thermal envelope, latency targets. Includes toolchain (Yocto/CMake), evaluation harness, and
-                a framework for continuous model retraining and data management.
+                Processing SDK. Bridged the gap between ML models and the constraints of a real SoC: memory
+                budget, computer power and latency targets. Includes integration into toolchain (Yocto/CMake), evaluation harness, and
+                a concept for continuous model retraining and data management.
               </p>
 
               {/* stack chips */}
@@ -256,7 +256,7 @@ function HomePage() {
               {/* outcome */}
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '12px 14px', borderLeft: '2px solid ' + colors.accent, background: colors.accentDim, fontSize: 13, color: colors.text }}>
                 <span style={{ color: colors.accent, flexShrink: 0, marginTop: 1 }}>▸</span>
-                <span>Prototype showcased internally at Sennheiser (Sept 2025) — real-time inference demonstrated live on hardware with full video pipeline running on target SoC.</span>
+                <span>Prototype showcased internally - real-time inference and image manipulation demonstrated live on hardware with full video pipeline running on target SoC.</span>
               </div>
             </div>
 
@@ -286,9 +286,9 @@ function HomePage() {
                 <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>Doorbell Detector</div>
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// end-to-end ML for a real annoyance'}</div>
                 <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
-                  Sound-based ML system to detect my doorbell — covering the full lifecycle:
+                  Sound-based ML system to detect my doorbell - covering the full lifecycle:
                   data collection &amp; management, model training, and self-hosted deployment.
-                  A deliberately complete project, not a notebook demo.
+                  A progressing project, not a notebook demo.
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginBottom: 10 }}>
                   {['Python', 'Audio ML', 'Data Mgmt', 'Deployment'].map(function(t, i) {
@@ -325,7 +325,7 @@ function HomePage() {
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// production ML for autonomous driving data'}</div>
                 <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
                   End-to-end automated training and evaluation pipeline for a driver-assistance function.
-                  Includes a custom time-series data management framework for large-scale car trip data,
+                  Includes a custom time-series data management framework for car trip data,
                   integrated with Azure ML and internal MLOps tooling.
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
