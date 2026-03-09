@@ -196,8 +196,9 @@ function HomePage() {
                 position: 'relative',
                 background: colors.surface,
                 border: '1px solid ' + (featHovered ? colors.accent + '66' : colors.accent + '33'),
+                borderRadius: 10,
                 padding: '36px 36px 32px',
-                marginBottom: 2,
+                marginBottom: 16,
                 overflow: 'hidden',
                 transition: 'border-color 0.3s',
               }}
@@ -265,7 +266,7 @@ function HomePage() {
             </div>
 
             {/* Secondary cards grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 2, marginBottom: 2 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, marginBottom: 16 }}>
 
               {/* Doorbell Detector */}
               <div
@@ -275,6 +276,7 @@ function HomePage() {
                   background: card1Hovered ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (card1Hovered ? 'rgba(255,255,255,0.14)' : colors.border),
                   borderTop: '1px solid ' + (card1Hovered ? colors.warm + '88' : colors.border),
+                  borderRadius: 10,
                   padding: '24px 20px 20px',
                   position: 'relative',
                   overflow: 'hidden',
@@ -312,6 +314,7 @@ function HomePage() {
                   background: card2Hovered ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (card2Hovered ? 'rgba(255,255,255,0.14)' : colors.border),
                   borderTop: '1px solid ' + (card2Hovered ? colors.warm + '88' : colors.border),
+                  borderRadius: 10,
                   padding: '24px 20px 20px',
                   position: 'relative',
                   overflow: 'hidden',
@@ -347,6 +350,7 @@ function HomePage() {
                   background: card3Hovered ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (card3Hovered ? 'rgba(255,255,255,0.14)' : colors.border),
                   borderTop: '1px solid ' + (card3Hovered ? '#ff9f43' + '88' : colors.border),
+                  borderRadius: 10,
                   padding: '24px 20px 20px',
                   position: 'relative',
                   overflow: 'hidden',
@@ -378,7 +382,7 @@ function HomePage() {
             </div>
 
             {/* More bar */}
-            <div style={{ border: '1px solid ' + colors.border, background: colors.surface, padding: '16px 20px', display: 'flex', alignItems: 'center', gap: 10, fontFamily: fonts.mono, fontSize: 11, color: colors.textMuted, flexWrap: 'wrap' }}>
+            <div style={{ border: '1px solid ' + colors.border, borderRadius: 10, background: colors.surface, padding: '16px 20px', display: 'flex', alignItems: 'center', gap: 10, fontFamily: fonts.mono, fontSize: 11, color: colors.textMuted, flexWrap: 'wrap' }}>
               <span style={{ color: colors.accent, opacity: 0.5 }}>▸</span>
               More experiments and open-source contributions on{' '}
               <a href="https://github.com/amjadsaadeh" target="_blank" rel="noreferrer" style={{ color: colors.accent, textDecoration: 'none', opacity: 0.7 }}>
@@ -392,7 +396,7 @@ function HomePage() {
         <FadeIn delay={225}>
           <section id="skills" style={{ marginBottom: 64 }}>
             <SectionLabel>skills</SectionLabel>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 2 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>
 
               {/* Computer Vision */}
               <div
@@ -401,6 +405,7 @@ function HomePage() {
                 style={{
                   background: domain1Hovered ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (domain1Hovered ? colors.accent + '44' : colors.border),
+                  borderRadius: 10,
                   padding: '28px 24px 24px',
                   position: 'relative',
                   overflow: 'hidden',
@@ -449,6 +454,7 @@ function HomePage() {
                 style={{
                   background: domain2Hovered ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (domain2Hovered ? '#9b5de544' : colors.border),
+                  borderRadius: 10,
                   padding: '28px 24px 24px',
                   position: 'relative',
                   overflow: 'hidden',
@@ -506,6 +512,7 @@ function HomePage() {
                 style={{
                   background: domain3Hovered ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (domain3Hovered ? '#f4b94244' : colors.border),
+                  borderRadius: 10,
                   padding: '28px 24px 24px',
                   position: 'relative',
                   overflow: 'hidden',
@@ -564,6 +571,7 @@ function HomePage() {
                 style={{
                   background: domain4Hovered ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (domain4Hovered ? colors.green + '44' : colors.border),
+                  borderRadius: 10,
                   padding: '28px 24px 24px',
                   position: 'relative',
                   overflow: 'hidden',
