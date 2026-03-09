@@ -217,7 +217,7 @@ function HomePage() {
                   )
                 })}
                 <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid rgba(255,71,87,0.25)', color: '#ff4757', opacity: 0.8 }}>NDA</span>
-                <span style={{ fontFamily: fonts.mono, fontSize: 11, color: colors.textMuted, marginLeft: 'auto' }}>2023 – present</span>
+                <span style={{ fontFamily: fonts.mono, fontSize: 11, color: colors.textMuted, marginLeft: 'auto' }}>2023 - 2025</span>
               </div>
 
               <h3 style={{ fontFamily: fonts.sans, fontSize: 24, fontWeight: 700, color: '#fff', letterSpacing: '-0.02em', marginBottom: 10, lineHeight: 1.15 }}>
