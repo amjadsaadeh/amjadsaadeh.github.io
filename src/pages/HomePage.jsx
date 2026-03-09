@@ -61,7 +61,7 @@ function HomePage() {
           <div style={{ display: 'flex', gap: 24 }}>
             <NavLink href="/" active>home</NavLink>
             <NavLink href="/about">about</NavLink>
-            <NavLink href="#projects">projects</NavLink>
+            <NavLink href="/projects">projects</NavLink>
             <NavLink href="/contact">contact</NavLink>
           </div>
         </div>
@@ -379,6 +379,23 @@ function HomePage() {
                   github.com →
                 </a>
               </div>
+            </div>
+
+            {/* All projects link */}
+            <div style={{ textAlign: 'right', marginBottom: 12 }}>
+              <a
+                href="/projects"
+                style={{
+                  fontFamily: fonts.mono,
+                  fontSize: 12,
+                  color: colors.accent,
+                  textDecoration: 'none',
+                  letterSpacing: '0.06em',
+                  opacity: 0.8,
+                }}
+              >
+                more projects &rarr;
+              </a>
             </div>
 
             {/* More bar */}
