@@ -23,6 +23,7 @@ const serverOutDir = path.join(distPath, '_server')
 const routes = [
   { url: '/', outFile: 'index.html' },
   { url: '/about', outFile: 'about/index.html' },
+  { url: '/projects', outFile: 'projects/index.html' },
 ]
 
 async function prerender() {
