@@ -1,8 +1,7 @@
 import { fonts, colors } from '../theme'
 import FadeIn from '../components/FadeIn'
 import SectionLabel from '../components/SectionLabel'
-import NavLink from '../components/NavLink'
-import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 const timelineItems = [
   {
@@ -261,48 +260,7 @@ function AboutPage() {
         rel="stylesheet"
       />
 
-      {/* Navigation */}
-      <nav
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-          background: colors.bg + 'ee',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid ' + colors.border,
-          padding: '0 24px',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 900,
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: 56,
-          }}
-        >
-          <Link
-            to="/"
-            style={{
-              fontFamily: fonts.mono,
-              fontSize: 15,
-              fontWeight: 600,
-              color: colors.accent,
-              textDecoration: 'none',
-            }}
-          >
-            saadeh<span style={{ color: colors.textMuted }}>.dev</span>
-          </Link>
-          <div style={{ display: 'flex', gap: 24 }}>
-            <NavLink href="/">home</NavLink>
-            <NavLink href="/about" active>about</NavLink>
-            <NavLink href="/#projects">projects</NavLink>
-            <NavLink href="/contact">contact</NavLink>
-          </div>
-        </div>
-      </nav>
+      <Navbar activePage="about" />
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
 

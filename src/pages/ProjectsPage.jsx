@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { fonts, colors } from '../theme'
-import NavLink from '../components/NavLink'
+import Navbar from '../components/Navbar'
 import SectionLabel from '../components/SectionLabel'
 import FadeIn from '../components/FadeIn'
 
@@ -41,41 +41,7 @@ function ProjectsPage() {
         rel="stylesheet"
       />
 
-      {/* Navigation */}
-      <nav
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-          background: colors.bg + 'ee',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid ' + colors.border,
-          padding: '0 24px',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 900,
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: 56,
-          }}
-        >
-          <a href="/" style={{ textDecoration: 'none' }}>
-            <span style={{ fontFamily: fonts.mono, fontSize: 15, fontWeight: 600, color: colors.accent }}>
-              saadeh<span style={{ color: colors.textMuted }}>.dev</span>
-            </span>
-          </a>
-          <div style={{ display: 'flex', gap: 24 }}>
-            <NavLink href="/">home</NavLink>
-            <NavLink href="/about">about</NavLink>
-            <NavLink href="/projects" active>projects</NavLink>
-            <NavLink href="/contact">contact</NavLink>
-          </div>
-        </div>
-      </nav>
+      <Navbar activePage="projects" />
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
         <FadeIn>
