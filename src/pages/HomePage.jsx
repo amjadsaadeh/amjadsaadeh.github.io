@@ -3,7 +3,7 @@ import { fonts, colors } from '../theme'
 import FadeIn from '../components/FadeIn'
 import SectionLabel from '../components/SectionLabel'
 import Tag from '../components/Tag'
-import NavLink from '../components/NavLink'
+import Navbar from '../components/Navbar'
 import ExpItem from '../components/ExpItem'
 import ProjectCard from '../components/ProjectCard'
 import InterestCard from '../components/InterestCard'
@@ -34,38 +34,7 @@ function HomePage() {
       />
 
       {/* Navigation */}
-      <nav
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-          background: colors.bg + 'ee',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid ' + colors.border,
-          padding: '0 24px',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 900,
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: 56,
-          }}
-        >
-          <span style={{ fontFamily: fonts.mono, fontSize: 15, fontWeight: 600, color: colors.accent }}>
-            saadeh<span style={{ color: colors.textMuted }}>.dev</span>
-          </span>
-          <div style={{ display: 'flex', gap: 24 }}>
-            <NavLink href="/" active>home</NavLink>
-            <NavLink href="/about">about</NavLink>
-            <NavLink href="/projects">projects</NavLink>
-            <NavLink href="/contact">contact</NavLink>
-          </div>
-        </div>
-      </nav>
+      <Navbar activePage="home" />
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
 
