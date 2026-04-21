@@ -610,12 +610,12 @@ function HomePage() {
         <FadeIn delay={250}>
           <section style={{ marginBottom: 64 }}>
             <SectionLabel color={colors.warm}>interests</SectionLabel>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'flex-start' }}>
-              <InterestCard icon="&#129504;" label="AI & Agents" color={colors.warm} />
-              <InterestCard icon="&#128247;" label="Image Processing" color={colors.accent} />
-              <InterestCard icon="&#127919;" label="Computer Vision" color={colors.warm} />
-              <InterestCard icon="&#127968;" label="Smart Home" color={colors.accent} />
-              <InterestCard icon="&#129302;" label="Embedded AI" color={colors.green} />
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 10 }}>
+              <InterestCard label="AI & Agents"      color={colors.warm}   desc="Autonomous systems & LLM tooling" />
+              <InterestCard label="Image Processing" color={colors.accent} desc="Pixels, filters, spatial transforms" />
+              <InterestCard label="Computer Vision"  color={colors.warm}   desc="Detection, segmentation, scene understanding" />
+              <InterestCard label="Smart Home"       color={colors.accent} desc="Sensors, automations, self-hosted infra" />
+              <InterestCard label="Embedded AI"      color={colors.green}  desc="On-device inference on constrained hardware" />
             </div>
           </section>
         </FadeIn>
