@@ -46,8 +46,21 @@ function ProjectsPage() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
         <FadeIn>
           <section style={{ paddingTop: 64, paddingBottom: 80 }}>
-            <SectionLabel>projects</SectionLabel>
-
+            <div style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.textMuted, marginBottom: 8 }}>
+              &gt; cat projects
+            </div>
+            <h1
+              style={{
+                fontFamily: fonts.sans,
+                fontSize: 36,
+                fontWeight: 700,
+                color: '#fff',
+                margin: '0 0 10px 0',
+                lineHeight: 1.15,
+              }}
+            >
+              Projects
+            </h1>
             <div
               style={{
                 display: 'grid',
