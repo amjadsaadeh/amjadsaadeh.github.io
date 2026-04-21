@@ -268,7 +268,7 @@ function AboutPage() {
         <FadeIn>
           <section style={{ paddingTop: 64, paddingBottom: 48 }}>
             <div style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.textMuted, marginBottom: 8 }}>
-              &gt; cat about.md
+              &gt; cat about
             </div>
             <h1
               style={{
