@@ -82,7 +82,7 @@ function ContactPage() {
         <FadeIn>
           <section style={{ paddingTop: 64, paddingBottom: 48 }}>
             <div style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.textMuted, marginBottom: 8 }}>
-              &gt; cat contact.md
+              &gt; cat contact
             </div>
             <h1
               style={{
