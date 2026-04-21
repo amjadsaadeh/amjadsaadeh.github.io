@@ -669,7 +669,7 @@ function HomePage() {
         </FadeIn>
 
         {/* Contact */}
-        <FadeIn delay={350}>
+        <FadeIn>
           <section id="contact" style={{ marginBottom: 80 }}>
             <SectionLabel color={colors.warm}>contact</SectionLabel>
             <div
