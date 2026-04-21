@@ -24,6 +24,7 @@ const routes = [
   { url: '/', outFile: 'index.html' },
   { url: '/about', outFile: 'about/index.html' },
   { url: '/projects', outFile: 'projects/index.html' },
+  { url: '/contact', outFile: 'contact/index.html' },
 ]
 
 async function prerender() {
