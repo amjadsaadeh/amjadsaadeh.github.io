@@ -9,3 +9,5 @@ export function render(url) {
     </StaticRouter>
   )
 }
+
+export { allPosts } from './lib/posts'
