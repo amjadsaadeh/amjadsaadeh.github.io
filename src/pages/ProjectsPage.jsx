@@ -88,7 +88,7 @@ function ProjectsPage() {
                   {[
                     { label: 'Featured', color: colors.accent },
                     { label: 'Computer Vision', color: colors.accent },
-                    { label: 'Embedded AI', color: '#f4b942' },
+                    { label: 'Embedded AI', color: colors.amber },
                   ].map(function(b) {
                     return (
                       <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>
@@ -96,7 +96,7 @@ function ProjectsPage() {
                       </span>
                     )
                   })}
-                  <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid rgba(255,71,87,0.25)', color: '#ff4757', opacity: 0.8 }}>NDA</span>
+                  <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid ' + colors.danger + '40', color: colors.danger, opacity: 0.8 }}>NDA</span>
                 </div>
                 <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>Real-Time Video AI on Qualcomm SoC</div>
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// object detection at full framerate on embedded hardware'}</div>
@@ -130,7 +130,7 @@ function ProjectsPage() {
               >
                 <div style={{ position: 'absolute', top: 10, right: 12, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted }}>02 / 04</div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
-                  {[{ label: 'ML', color: colors.warm }, { label: 'Deployment', color: colors.green }, { label: 'Open Source', color: '#a8e6cf' }].map(function(b) {
+                  {[{ label: 'ML', color: colors.warm }, { label: 'Deployment', color: colors.green }, { label: 'Open Source', color: colors.mint }].map(function(b) {
                     return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
                   })}
                 </div>
@@ -174,7 +174,7 @@ function ProjectsPage() {
                   {[{ label: 'MLOps', color: colors.warm }, { label: 'ADAS', color: colors.accent }].map(function(b) {
                     return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
                   })}
-                  <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid rgba(255,71,87,0.25)', color: '#ff4757', opacity: 0.8 }}>NDA</span>
+                  <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid ' + colors.danger + '40', color: colors.danger, opacity: 0.8 }}>NDA</span>
                 </div>
                 <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>ADAS ML Pipeline @ CARIAD</div>
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// production ML for autonomous driving data'}</div>
@@ -198,7 +198,7 @@ function ProjectsPage() {
                 style={{
                   background: card3 ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (card3 ? 'rgba(255,255,255,0.14)' : colors.border),
-                  borderTop: '1px solid ' + (card3 ? '#ff9f43' + '88' : colors.border),
+                  borderTop: '1px solid ' + (card3 ? colors.orange + '88' : colors.border),
                   borderRadius: 10,
                   padding: '24px 20px 20px',
                   position: 'relative',
@@ -208,7 +208,7 @@ function ProjectsPage() {
               >
                 <div style={{ position: 'absolute', top: 10, right: 12, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted }}>04 / 04</div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
-                  {[{ label: 'DSP', color: '#ff9f43' }, { label: 'Open Source', color: '#a8e6cf' }].map(function(b) {
+                  {[{ label: 'DSP', color: colors.orange }, { label: 'Open Source', color: colors.mint }].map(function(b) {
                     return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
                   })}
                 </div>

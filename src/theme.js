@@ -16,4 +16,9 @@ export const colors = {
   warmDim: 'rgba(240,171,252,0.10)',
   green: '#4ade80',
   greenDim: 'rgba(74,222,128,0.10)',
+  violet: '#9b5de5',
+  amber: '#f4b942',
+  orange: '#ff9f43',
+  mint: '#a8e6cf',
+  danger: '#ff4757',
 }
