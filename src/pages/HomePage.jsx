@@ -182,7 +182,7 @@ function HomePage() {
                 {[
                   { label: 'Featured', color: colors.accent },
                   { label: 'Computer Vision', color: colors.accent },
-                  { label: 'Embedded AI', color: '#f4b942' },
+                  { label: 'Embedded AI', color: colors.amber },
                 ].map(function(b) {
                   return (
                     <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 10, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '3px 9px', border: '1px solid ' + b.color + '55', color: b.color }}>
@@ -190,7 +190,7 @@ function HomePage() {
                     </span>
                   )
                 })}
-                <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid rgba(255,71,87,0.25)', color: '#ff4757', opacity: 0.8 }}>NDA</span>
+                <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid ' + colors.danger + '40', color: colors.danger, opacity: 0.8 }}>NDA</span>
                 <span style={{ fontFamily: fonts.mono, fontSize: 11, color: colors.textMuted, marginLeft: 'auto' }}>2023 - 2025</span>
               </div>
 
@@ -254,7 +254,7 @@ function HomePage() {
               >
                 <div style={{ position: 'absolute', top: 10, right: 12, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted }}>02 / 04</div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
-                  {[{ label: 'ML', color: colors.warm }, { label: 'Deployment', color: colors.green }, { label: 'Open Source', color: '#a8e6cf' }].map(function(b) {
+                  {[{ label: 'ML', color: colors.warm }, { label: 'Deployment', color: colors.green }, { label: 'Open Source', color: colors.mint }].map(function(b) {
                     return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
                   })}
                 </div>
@@ -295,7 +295,7 @@ function HomePage() {
                   {[{ label: 'MLOps', color: colors.warm }, { label: 'ADAS', color: colors.accent }].map(function(b) {
                     return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
                   })}
-                  <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid rgba(255,71,87,0.25)', color: '#ff4757', opacity: 0.8 }}>NDA</span>
+                  <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid ' + colors.danger + '40', color: colors.danger, opacity: 0.8 }}>NDA</span>
                 </div>
                 <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>ADAS ML Pipeline @ CARIAD</div>
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// production ML for autonomous driving data'}</div>
@@ -318,7 +318,7 @@ function HomePage() {
                 style={{
                   background: card3Hovered ? colors.surfaceLight : colors.surface,
                   border: '1px solid ' + (card3Hovered ? 'rgba(255,255,255,0.14)' : colors.border),
-                  borderTop: '1px solid ' + (card3Hovered ? '#ff9f43' + '88' : colors.border),
+                  borderTop: '1px solid ' + (card3Hovered ? colors.orange + '88' : colors.border),
                   borderRadius: 10,
                   padding: '24px 20px 20px',
                   position: 'relative',
@@ -328,7 +328,7 @@ function HomePage() {
               >
                 <div style={{ position: 'absolute', top: 10, right: 12, fontFamily: fonts.mono, fontSize: 9, color: colors.textMuted }}>04 / 04</div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
-                  {[{ label: 'DSP', color: '#ff9f43' }, { label: 'Open Source', color: '#a8e6cf' }].map(function(b) {
+                  {[{ label: 'DSP', color: colors.orange }, { label: 'Open Source', color: colors.mint }].map(function(b) {
                     return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
                   })}
                 </div>
@@ -439,7 +439,7 @@ function HomePage() {
                 onMouseLeave={function() { setDomain2Hovered(false) }}
                 style={{
                   background: domain2Hovered ? colors.surfaceLight : colors.surface,
-                  border: '1px solid ' + (domain2Hovered ? '#9b5de544' : colors.border),
+                  border: '1px solid ' + (domain2Hovered ? colors.violet + '44' : colors.border),
                   borderRadius: 10,
                   padding: '28px 24px 24px',
                   position: 'relative',
@@ -447,8 +447,8 @@ function HomePage() {
                   transition: 'border-color 0.3s, background 0.3s',
                 }}
               >
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: '#9b5de5', transform: domain2Hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 0.4s ease' }} />
-                <div style={{ position: 'absolute', top: -40, right: -40, width: 120, height: 120, borderRadius: '50%', background: '#9b5de5', opacity: domain2Hovered ? 0.08 : 0, filter: 'blur(60px)', transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: colors.violet, transform: domain2Hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 0.4s ease' }} />
+                <div style={{ position: 'absolute', top: -40, right: -40, width: 120, height: 120, borderRadius: '50%', background: colors.violet, opacity: domain2Hovered ? 0.08 : 0, filter: 'blur(60px)', transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 20 }}>
                   <svg width="32" height="32" viewBox="0 0 36 36" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
                     <circle cx="6" cy="18" r="2" fill="#9b5de5" opacity="0.6"/>
@@ -467,7 +467,7 @@ function HomePage() {
                   </svg>
                   <div>
                     <div style={{ fontFamily: fonts.sans, fontSize: 17, fontWeight: 700, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>ML & MLOps</div>
-                    <div style={{ fontFamily: fonts.mono, fontSize: 10, color: '#9b5de5', letterSpacing: '0.05em', marginTop: 3, opacity: 0.7 }}>train · version · deploy</div>
+                    <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.violet, letterSpacing: '0.05em', marginTop: 3, opacity: 0.7 }}>train · version · deploy</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -481,7 +481,7 @@ function HomePage() {
                       <span key={i} style={{
                         fontFamily: fonts.mono, fontSize: 10, padding: '4px 9px',
                         border: '1px solid ' + (core ? '#9b5de555' : 'rgba(255,255,255,0.08)'),
-                        color: core ? '#9b5de5' : colors.text,
+                        color: core ? colors.violet : colors.text,
                         background: core ? 'rgba(155,93,229,0.08)' : 'rgba(255,255,255,0.02)',
                         letterSpacing: '0.03em',
                       }}>{label}</span>
@@ -505,8 +505,8 @@ function HomePage() {
                   transition: 'border-color 0.3s, background 0.3s',
                 }}
               >
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: '#f4b942', transform: domain3Hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 0.4s ease' }} />
-                <div style={{ position: 'absolute', top: -40, right: -40, width: 120, height: 120, borderRadius: '50%', background: '#f4b942', opacity: domain3Hovered ? 0.08 : 0, filter: 'blur(60px)', transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: colors.amber, transform: domain3Hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: 'transform 0.4s ease' }} />
+                <div style={{ position: 'absolute', top: -40, right: -40, width: 120, height: 120, borderRadius: '50%', background: colors.amber, opacity: domain3Hovered ? 0.08 : 0, filter: 'blur(60px)', transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 20 }}>
                   <svg width="32" height="32" viewBox="0 0 36 36" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
                     <rect x="10" y="10" width="16" height="16" stroke="#f4b942" strokeWidth="1.5"/>
@@ -526,7 +526,7 @@ function HomePage() {
                   </svg>
                   <div>
                     <div style={{ fontFamily: fonts.sans, fontSize: 17, fontWeight: 700, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>Embedded & Edge</div>
-                    <div style={{ fontFamily: fonts.mono, fontSize: 10, color: '#f4b942', letterSpacing: '0.05em', marginTop: 3, opacity: 0.7 }}>silicon · firmware · real-time</div>
+                    <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.amber, letterSpacing: '0.05em', marginTop: 3, opacity: 0.7 }}>silicon · firmware · real-time</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -540,7 +540,7 @@ function HomePage() {
                       <span key={i} style={{
                         fontFamily: fonts.mono, fontSize: 10, padding: '4px 9px',
                         border: '1px solid ' + (core ? '#f4b94255' : 'rgba(255,255,255,0.08)'),
-                        color: core ? '#f4b942' : colors.text,
+                        color: core ? colors.amber : colors.text,
                         background: core ? 'rgba(244,185,66,0.08)' : 'rgba(255,255,255,0.02)',
                         letterSpacing: '0.03em',
                       }}>{label}</span>
