@@ -35,14 +35,19 @@ Back then I researched and sketched a few technical approaches:
 
 With the decision for option 3 I started to plan for it.
 
-## Hardware selection
+## Selection of recording device
 
 Hardware selection was pretty easy. I got an old raspberry pi zero w with an reSpearker 2 Mic Pi-Hat from an old undocumented project
 (my try to build an alexa alternative with snips.ai). In addition, all necessary steps should run locally, either on my homeserver or at the rapsberry pi itself.
 
-## Let the overengineering hit in
+## Planning consideration
 
 I decided for a technical approach and I decided for the recording hardware. Now I needed to decide on how to build this.
-In a rational world, when I need to think about things like roadmaps, risks und ROI I would've done a few things different, but it's a side project.
-No deadline, no necessaty to judge or rationalize my decision. I can just pick what I want. So I decided to go down the machine learning approach,
-creating a semi-self improving system for my doorbell detector.
+In a rational world, when I need to think about things like roadmaps, risks und ROI I would've done a few more planning, get approval and do reviews.
+But it's a side project, it's completly up to me. No deadline, no necessaty to rationalize my decision. I can just pick what I want.
+So I decided to go down the machine learning road and create a semi-self improving system for my doorbell detector.
+This was a major deviation from my typical workflow to start easy and then decide to bump the complexity if neccessary.
+
+So proceed with the architecture and *let the overengineering hit in*.
+
+## The virtous circle of machine learning
