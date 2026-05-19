@@ -269,9 +269,14 @@ function HomePage() {
                     return <span key={i} style={{ fontFamily: fonts.mono, fontSize: 9.5, padding: '2px 6px', border: '1px solid ' + colors.border, color: colors.textMuted }}>{t}</span>
                   })}
                 </div>
-                <a href="https://github.com/amjadsaadeh/doorbell-detector" target="_blank" rel="noreferrer" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
-                  github.com →
-                </a>
+                <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                  <a href="https://github.com/amjadsaadeh/doorbell-detector" target="_blank" rel="noreferrer" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
+                    github.com →
+                  </a>
+                  <a href="/blog/tag/doorbell-detector" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
+                    blog posts →
+                  </a>
+                </div>
               </div>
 
               {/* ADAS MLOps Pipeline */}
