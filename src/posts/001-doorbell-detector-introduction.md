@@ -1,6 +1,6 @@
 ---
 title: Doorbell Detector Introduction
-date: 2026-05-13T11:28:38.928Z
+date: 2026-05-19T08:57:06.187Z
 description: This is the first post of an (hoepfully) upcoming series about my doorbell detection system.
 tags:
   - doorbell detector
