@@ -79,8 +79,7 @@ function HomePage() {
                   Software Engineer specializing in image processing, video systems, and AI &mdash; building things that see and understand.
                 </p>
                 <div style={{ fontFamily: fonts.mono, fontSize: 13, color: colors.warm, display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: colors.textMuted }}>$</span> motto
-                  <span style={{ color: colors.textMuted }}>&rarr;</span>
+                  <span style={{ color: colors.textMuted }}>$</span>
                   &quot;progress, not perfection&quot;
                   <span style={{ opacity: cursorBlink ? 1 : 0, transition: 'opacity 0.1s', color: colors.accent }}>
                     &#9610;
