@@ -116,7 +116,7 @@ function HomePage() {
             <span style={{ color: colors.textMuted }}>currently exploring:</span>
             <span>AI Agents</span>
             <span style={{ color: colors.textMuted }}>&middot;</span>
-            <span>vibe coding</span>
+            <span>AI assisted software development</span>
             <span style={{ color: colors.textMuted }}>&middot;</span>
             <span>edge AI on embedded platforms</span>
           </div>
