@@ -36,13 +36,18 @@ function parseFrontmatter(raw) {
   if (closeIndex === -1) return { date: '', tags: [] }
   let date = ''
   let tags = []
+  let lastKey = null
   for (const line of lines.slice(1, closeIndex)) {
-    const colon = line.indexOf(':')
-    if (colon === -1) continue
-    const key = line.slice(0, colon).trim()
-    const value = line.slice(colon + 1).trim()
-    if (key === 'date') date = value
-    if (key === 'tags') tags = value.split(',').map(t => t.trim()).filter(Boolean)
+    if (line.trim().startsWith('- ') && lastKey === 'tags') {
+      tags.push(line.trim().slice(2).trim())
+    } else {
+      const colon = line.indexOf(':')
+      if (colon === -1) continue
+      lastKey = line.slice(0, colon).trim()
+      const value = line.slice(colon + 1).trim()
+      if (lastKey === 'date') date = value
+      if (lastKey === 'tags' && value) tags = value.split(',').map(t => t.trim()).filter(Boolean)
+    }
   }
   return { date, tags }
 }

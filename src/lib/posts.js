@@ -4,6 +4,12 @@ export function tagToSlug(tag) {
   return tag.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
 }
 
+function parseTags(value) {
+  if (!value) return []
+  if (Array.isArray(value)) return value.map(t => t.trim()).filter(Boolean)
+  return value.split(',').map(t => t.trim()).filter(Boolean)
+}
+
 function parseFrontmatter(raw) {
   const lines = raw.split('\n')
   if (lines[0].trim() !== '---') return { data: {}, content: raw }
@@ -12,12 +18,17 @@ function parseFrontmatter(raw) {
   if (closeIndex === -1) return { data: {}, content: raw }
 
   const data = {}
+  let lastKey = null
   for (const line of lines.slice(1, closeIndex)) {
-    const colon = line.indexOf(':')
-    if (colon === -1) continue
-    const key = line.slice(0, colon).trim()
-    const value = line.slice(colon + 1).trim()
-    data[key] = value
+    if (line.trim().startsWith('- ') && lastKey) {
+      if (!Array.isArray(data[lastKey])) data[lastKey] = []
+      data[lastKey].push(line.trim().slice(2).trim())
+    } else {
+      const colon = line.indexOf(':')
+      if (colon === -1) continue
+      lastKey = line.slice(0, colon).trim()
+      data[lastKey] = line.slice(colon + 1).trim()
+    }
   }
 
   return { data, content: lines.slice(closeIndex + 1).join('\n').trimStart() }
@@ -34,7 +45,7 @@ export const allPosts = Object.entries(modules)
       title: data.title || slug,
       date: data.date || '',
       description: data.description || '',
-      tags: data.tags ? data.tags.split(',').map(t => t.trim()).filter(Boolean) : [],
+      tags: parseTags(data.tags),
     }
   })
   .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
@@ -63,7 +74,7 @@ export function getPostBySlug(slug) {
     title: data.title || slug,
     date: data.date || '',
     description: data.description || '',
-    tags: data.tags ? data.tags.split(',').map(t => t.trim()).filter(Boolean) : [],
+    tags: parseTags(data.tags),
     html: marked.parse(content),
   }
 }
