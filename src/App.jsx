@@ -5,6 +5,7 @@ import ContactPage from './pages/ContactPage'
 import ProjectsPage from './pages/ProjectsPage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
+import BlogTagPage from './pages/BlogTagPage'
 
 export function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ export function AppRoutes() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/tag/:tag" element={<BlogTagPage />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
     </Routes>
   )

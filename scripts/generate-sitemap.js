@@ -17,6 +17,10 @@ const postsPath = path.join(root, 'src', 'posts')
 
 const SITE_URL = 'https://www.saadeh.dev'
 
+function tagToSlug(tag) {
+  return tag.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+}
+
 const staticRoutes = [
   { path: '/', changefreq: 'monthly', priority: '1.0' },
   { path: '/about', changefreq: 'monthly', priority: '0.8' },
@@ -25,19 +29,22 @@ const staticRoutes = [
   { path: '/blog', changefreq: 'weekly', priority: '0.9' },
 ]
 
-function parseFrontmatterDate(raw) {
+function parseFrontmatter(raw) {
   const lines = raw.split('\n')
-  if (lines[0].trim() !== '---') return ''
+  if (lines[0].trim() !== '---') return { date: '', tags: [] }
   const closeIndex = lines.findIndex((l, i) => i > 0 && l.trim() === '---')
-  if (closeIndex === -1) return ''
+  if (closeIndex === -1) return { date: '', tags: [] }
+  let date = ''
+  let tags = []
   for (const line of lines.slice(1, closeIndex)) {
     const colon = line.indexOf(':')
     if (colon === -1) continue
-    if (line.slice(0, colon).trim() === 'date') {
-      return line.slice(colon + 1).trim()
-    }
+    const key = line.slice(0, colon).trim()
+    const value = line.slice(colon + 1).trim()
+    if (key === 'date') date = value
+    if (key === 'tags') tags = value.split(',').map(t => t.trim()).filter(Boolean)
   }
-  return ''
+  return { date, tags }
 }
 
 function collectPosts() {
@@ -48,7 +55,8 @@ function collectPosts() {
     .map((file) => {
       const raw = fs.readFileSync(path.join(postsPath, file), 'utf-8')
       const slug = file.replace(/\.md$/, '')
-      return { slug, date: parseFrontmatterDate(raw) }
+      const { date, tags } = parseFrontmatter(raw)
+      return { slug, date, tags }
     })
 }
 
@@ -90,6 +98,18 @@ function generate() {
     )
   }
 
+  const uniqueTags = [...new Set(posts.flatMap(p => p.tags))].sort()
+  for (const tag of uniqueTags) {
+    entries.push(
+      urlEntry({
+        loc: `${SITE_URL}/blog/tag/${tagToSlug(tag)}`,
+        lastmod: today,
+        changefreq: 'weekly',
+        priority: '0.6',
+      })
+    )
+  }
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join('\n')}\n</urlset>\n`
 
   if (!fs.existsSync(distPath)) {
@@ -98,7 +118,7 @@ function generate() {
 
   const outPath = path.join(distPath, 'sitemap.xml')
   fs.writeFileSync(outPath, xml)
-  console.log(`Sitemap generated: dist/sitemap.xml (${staticRoutes.length + posts.length} URLs)`)
+  console.log(`Sitemap generated: dist/sitemap.xml (${staticRoutes.length + posts.length + uniqueTags.length} URLs)`)
 }
 
 generate()

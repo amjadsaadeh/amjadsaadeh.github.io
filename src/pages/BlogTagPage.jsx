@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { colors, fonts } from '../theme'
 import FadeIn from '../components/FadeIn'
 import Navbar from '../components/Navbar'
-import { allPosts, tagToSlug } from '../lib/posts'
+import { getPostsByTag, getTagLabel, tagToSlug } from '../lib/posts'
 
 function TagPill({ label }) {
   return (
@@ -106,7 +106,11 @@ function PostCard({ post }) {
   )
 }
 
-function BlogPage() {
+function BlogTagPage() {
+  const { tag } = useParams()
+  const posts = getPostsByTag(tag)
+  const label = getTagLabel(tag)
+
   return (
     <div style={{ background: colors.bg, minHeight: '100vh', color: colors.text }}>
       <link
@@ -120,7 +124,7 @@ function BlogPage() {
         <FadeIn>
           <section style={{ paddingTop: 64, paddingBottom: 48 }}>
             <div style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.textMuted, marginBottom: 8 }}>
-              &gt; cat blog
+              &gt; cat blog/tag/{tag}
             </div>
             <h1
               style={{
@@ -132,7 +136,7 @@ function BlogPage() {
                 lineHeight: 1.15,
               }}
             >
-              Writing
+              {label}
             </h1>
             <p
               style={{
@@ -143,23 +147,28 @@ function BlogPage() {
                 lineHeight: 1.6,
               }}
             >
-              Notes on embedded systems, machine learning, and building things.
+              {posts.length === 0
+                ? 'No posts found for this tag.'
+                : `${posts.length} post${posts.length === 1 ? '' : 's'} tagged with this topic.`}
             </p>
           </section>
         </FadeIn>
 
         <div style={{ paddingBottom: 48 }}>
-          {allPosts.length === 0 ? (
-            <p style={{ fontFamily: fonts.mono, fontSize: 13, color: colors.textMuted }}>
-              No posts yet.
-            </p>
-          ) : (
-            allPosts.map((post, index) => (
-              <FadeIn key={post.slug} delay={index * 60}>
-                <PostCard post={post} />
-              </FadeIn>
-            ))
-          )}
+          {posts.map((post, index) => (
+            <FadeIn key={post.slug} delay={index * 60}>
+              <PostCard post={post} />
+            </FadeIn>
+          ))}
+        </div>
+
+        <div style={{ marginBottom: 32 }}>
+          <a
+            href="/blog"
+            style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.accent, textDecoration: 'none' }}
+          >
+            ← all posts
+          </a>
         </div>
 
         <footer
@@ -185,4 +194,4 @@ function BlogPage() {
   )
 }
 
-export default BlogPage
+export default BlogTagPage

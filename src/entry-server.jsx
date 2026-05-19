@@ -10,4 +10,4 @@ export function render(url) {
   )
 }
 
-export { allPosts } from './lib/posts'
+export { allPosts, allTags, tagToSlug } from './lib/posts'

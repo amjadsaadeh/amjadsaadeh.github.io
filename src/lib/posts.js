@@ -1,5 +1,9 @@
 import { marked } from 'marked'
 
+export function tagToSlug(tag) {
+  return tag.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+}
+
 function parseFrontmatter(raw) {
   const lines = raw.split('\n')
   if (lines[0].trim() !== '---') return { data: {}, content: raw }
@@ -34,6 +38,20 @@ export const allPosts = Object.entries(modules)
     }
   })
   .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+
+export const allTags = [...new Set(allPosts.flatMap(p => p.tags))].sort()
+
+export function getPostsByTag(tagSlug) {
+  return allPosts.filter(post => post.tags.some(t => tagToSlug(t) === tagSlug))
+}
+
+export function getTagLabel(tagSlug) {
+  for (const post of allPosts) {
+    const match = post.tags.find(t => tagToSlug(t) === tagSlug)
+    if (match) return match
+  }
+  return tagSlug
+}
 
 export function getPostBySlug(slug) {
   const key = `../posts/${slug}.md`
