@@ -1,12 +1,13 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { colors, fonts } from '../theme'
 import FadeIn from '../components/FadeIn'
 import Navbar from '../components/Navbar'
-import { getPostBySlug } from '../lib/posts'
+import { getPostBySlug, tagToSlug } from '../lib/posts'
 
 function TagPill({ label }) {
   return (
-    <span
+    <Link
+      to={`/blog/tag/${tagToSlug(label)}`}
       style={{
         fontFamily: fonts.mono,
         fontSize: 9,
@@ -16,10 +17,11 @@ function TagPill({ label }) {
         border: '1px solid ' + colors.accent + '44',
         borderRadius: 3,
         padding: '2px 6px',
+        textDecoration: 'none',
       }}
     >
       {label}
-    </span>
+    </Link>
   )
 }
 

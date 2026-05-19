@@ -40,15 +40,19 @@ async function prerender() {
     },
   })
 
-  // 2. Import the render function and post list from the SSR bundle
-  const { render, allPosts } = await import(
+  // 2. Import the render function and post/tag lists from the SSR bundle
+  const { render, allPosts, allTags, tagToSlug } = await import(
     pathToFileURL(path.join(serverOutDir, 'entry-server.js')).href
   )
 
-  // 2a. Append blog routes dynamically from the post list
+  // 2a. Append blog routes dynamically from the post and tag lists
   routes.push({ url: '/blog', outFile: 'blog/index.html' })
   for (const post of allPosts) {
     routes.push({ url: `/blog/${post.slug}`, outFile: `blog/${post.slug}/index.html` })
+  }
+  for (const tag of allTags) {
+    const slug = tagToSlug(tag)
+    routes.push({ url: `/blog/tag/${slug}`, outFile: `blog/tag/${slug}/index.html` })
   }
 
   // 3. Read Vite's HTML template (already has asset hashes injected)
