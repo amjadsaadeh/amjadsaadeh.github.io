@@ -59,7 +59,7 @@ function PostCard({ post }) {
           fontFamily: fonts.sans,
           fontSize: 18,
           fontWeight: 600,
-          color: hovered ? colors.accent : '#fff',
+          color: hovered ? colors.accent : colors.textStrong,
           textDecoration: 'none',
           display: 'block',
           marginBottom: 8,
@@ -131,7 +131,7 @@ function BlogTagPage() {
                 fontFamily: fonts.sans,
                 fontSize: 36,
                 fontWeight: 700,
-                color: '#fff',
+                color: colors.textStrong,
                 margin: '0 0 10px 0',
                 lineHeight: 1.15,
               }}
