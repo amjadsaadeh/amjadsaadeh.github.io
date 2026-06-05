@@ -275,7 +275,7 @@ function AboutPage() {
                 fontFamily: fonts.sans,
                 fontSize: 36,
                 fontWeight: 700,
-                color: '#fff',
+                color: colors.textStrong,
                 margin: '0 0 10px 0',
                 lineHeight: 1.15,
               }}

@@ -54,7 +54,7 @@ function ProjectsPage() {
                 fontFamily: fonts.sans,
                 fontSize: 36,
                 fontWeight: 700,
-                color: '#fff',
+                color: colors.textStrong,
                 margin: '0 0 10px 0',
                 lineHeight: 1.15,
               }}
@@ -98,7 +98,7 @@ function ProjectsPage() {
                   })}
                   <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid ' + colors.danger + '40', color: colors.danger, opacity: 0.8 }}>NDA</span>
                 </div>
-                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>Real-Time Video AI on Qualcomm SoC</div>
+                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: colors.textStrong, marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>Real-Time Video AI on Qualcomm SoC</div>
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// object detection at full framerate on embedded hardware'}</div>
                 <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
                   Architected and shipped the full video AI pipeline for an embedded product — from GStreamer
@@ -134,7 +134,7 @@ function ProjectsPage() {
                     return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
                   })}
                 </div>
-                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>Doorbell Detector</div>
+                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: colors.textStrong, marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>Doorbell Detector</div>
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// end-to-end ML for a real annoyance'}</div>
                 <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
                   Sound-based ML system to detect my doorbell - covering the full lifecycle:
@@ -179,7 +179,7 @@ function ProjectsPage() {
                   })}
                   <span style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.1em', padding: '2px 7px', border: '1px solid ' + colors.danger + '40', color: colors.danger, opacity: 0.8 }}>NDA</span>
                 </div>
-                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>ADAS ML Pipeline @ CARIAD</div>
+                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: colors.textStrong, marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>ADAS ML Pipeline @ CARIAD</div>
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// production ML for autonomous driving data'}</div>
                 <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
                   End-to-end automated training and evaluation pipeline for a driver-assistance function.
@@ -215,7 +215,7 @@ function ProjectsPage() {
                     return <span key={b.label} style={{ fontFamily: fonts.mono, fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '2px 8px', border: '1px solid ' + b.color + '44', color: b.color }}>{b.label}</span>
                   })}
                 </div>
-                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>pyMUSIC</div>
+                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 700, color: colors.textStrong, marginBottom: 6, letterSpacing: '-0.01em', lineHeight: 1.3 }}>pyMUSIC</div>
                 <div style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.textMuted, marginBottom: 10, letterSpacing: '0.03em' }}>{'// signal subspace methods made accessible'}</div>
                 <p style={{ fontFamily: fonts.sans, fontSize: 13, lineHeight: 1.65, color: colors.text, marginBottom: 14 }}>
                   Clean Python implementation of the MUSIC algorithm (MUltiple SIgnal Classification)
