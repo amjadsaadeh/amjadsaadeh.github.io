@@ -52,12 +52,14 @@ The dashed red line is the start of the jingle, I also added the mean (dashed me
 The base rule has been found pretty fast: alway keep about 1s of recording in a buffer (so nothing is missed) and as soon the mean surpasses a threshold I start to record for 6 seconds.
 
 The plot above looks quite appealing, but I also got some doorbell recordings with noise:
+
 ![Doorbell recording with noise](images/002/doosbell-noisy.png)
+
 I cannot remember what it was, but the characteristics of the doorbell isn't visible anymore, at least in this vizualization.
 In a spectrogram this may look different.
 
 However, I got my threshold based rule. Simple, nice and a lot potential for false positives, i.e. detecting doorbells, which are not there.
-That was something I just counted for, because the more data the better.
+That was something I just counted for, because the "more data the better".
 Well, lets see what happened later.
 
 # Labeling
@@ -77,4 +79,13 @@ It's been mounted to both, the Microphone SBC and the Label Studio host containe
 
 # First load of data incoming
 
+As already mentioned, I decided to go with a simple threshold approach for data collection.
+So I prepared the Raspberry Pi zero with the microphone hat (which was an odessey itself, but that's another story) and placed my recording script.
+For some time it worked quite well, typical false positives where voices and smashing door.
+However, it worked until my vacuum robot hit, which generated a big amount of data just with noise.
+Luckily I was aware of this and used the Label Studio API to automatically label all these records as background, but the distribution was this in the end:
 
+![Data distribution](images/002/data-distribution.png)
+
+Internally I distinquished between different doorbell types, this is why I chose the stacked histogram for vizualisation.
+You may see the heavy skew in my dataset, which left me struggling during training, but this is something for the next post.
