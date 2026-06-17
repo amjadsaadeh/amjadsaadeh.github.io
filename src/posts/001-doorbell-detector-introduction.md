@@ -8,7 +8,7 @@ tags:
   - audio
   - smart home
   - homeassistant
-draft: true
+draft: false
 ---
 
 This is not a polished success story — in fact, at the time of writing this, the story is not even finished. It's a step-by-step approach to a side project I occasionally work on, and it may give you some interesting insights.
