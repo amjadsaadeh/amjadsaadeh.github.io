@@ -51,7 +51,7 @@ So, what handmade rule should I build for data collection?
 To get a grip on the data I picked some examples and visualized them with a few statistical measurements.
 They look like this:
 
-![Doorbell recording without noise](images/002/doorbell-1.png)
+![Doorbell recording without noise](/blog-images/002/doorbell-1.png)
 
 The dashed red line marks the start of the jingle.
 I also added the mean (dashed magenta) and the standard deviation (dashed yellow) of the *absolute* amplitude, both computed over a sliding window of 100ms.
@@ -62,14 +62,14 @@ The threshold is a rough manual estimate from a few clean samples compared to re
 
 The plot above looks quite appealing, but I also got some doorbell recordings with noise:
 
-![Doorbell recording with noise](images/002/doorbell-noisy.png)
+![Doorbell recording with noise](/blog-images/002/doorbell-noisy.png)
 
 I cannot remember what it was, but the characteristics of the doorbell isn't visible anymore, at least in this vizualization.
 For the sake of completeness, here are spectrograms of these audio segments:
 
-![Spectrogram of the doorbell recording](images/002/doorbell-1-spectrogram.png)
+![Spectrogram of the doorbell recording](/blog-images/002/doorbell-1-spectrogram.png)
 
-![Spectrogram of the noisy doorbell recording](images/002/doorbell-noisy-spectrogram.png)
+![Spectrogram of the noisy doorbell recording](/blog-images/002/doorbell-noisy-spectrogram.png)
 
 In the clean recording you can make out the jingle's harmonic structure, distinct horizontal frequency bands that light up right after the red line.
 In the noisy recording those bands are largely washed out, so the start of the jingle is much harder to pin down.
@@ -111,7 +111,7 @@ Luckily I was aware of this because I supervised the recording campaigns and got
 Since I supervised those windows, I knew no doorbell rang during them, otherwise bulk-labeling every vacuum clip as background would have risked burying a hard positive example (a ring masked by the vacuum noise) in the negative class.
 In the end the distribution looked like this:
 
-![Data distribution](images/002/data-distribution.png)
+![Data distribution](/blog-images/002/data-distribution.png)
 
 Internally I distinguished between different doorbell types, which is why I chose the stacked histogram for visualization.
 You may see the heavy skew in my dataset, a few dozen doorbell recordings vs almost 700 recordings for background, collected over roughly 2 days of recording.
