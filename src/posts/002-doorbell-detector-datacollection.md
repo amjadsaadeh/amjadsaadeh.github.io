@@ -9,7 +9,7 @@ tags:
   - smart home
   - homeassistant
   - data collection
-draft: true
+draft: false
 ---
 
 In my [previous post](https://www.saadeh.dev/blog/001-doorbell-detector-introduction/) I covered the motivation for this project and sketched out my first ideas.
