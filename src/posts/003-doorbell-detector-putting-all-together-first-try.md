@@ -35,6 +35,16 @@ Which features to take is also a continous task to assess during training.
 In this project I decided for [mel ceptrum features](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum), mainly because it should resemble human hearing.
 In addition it results in less features than default [STFT (Shot Time Fourier Transform)](https://en.wikipedia.org/wiki/Short-time_Fourier_transform), which saves processing time and space further down the pipeline.
 
+I decided to do the predictions on 500ms chunks.
+This additionally reduced the number of features and was also useful to keep latency low.
+In the end I got 1298 chunks I can train on.
+
+## Data balancing
+
+Since I got a [highly skewed dataset](https://www.saadeh.dev/blog/002-doorbell-detector-datacollection/#first-load-of-data-incoming) I needed to account for this. 
+Otherwise my predictor will shoot for the high volume class all the time making it worse even my metrics looks good.
+I decided do balancing in chunk level and went for the low hanging fruits on dataset balancing: using all doorbell chunks and sample randomly from the background chunks, so I got an even distribution over the doorbell and background class.
+
 # Training
 
 Lets get to the meat: training.
@@ -47,3 +57,19 @@ To keep track of changes I introduced [MLFlow](https://mlflow.org/) into my setu
 This is a tool to record training runs and save artifacts in a systematic fashion and is provides nice APIs to automatically do this for me.
 In addition I also tracked dataset information to make also 
 This way I can, at least, track down the dataset responsible for specific results.
+
+Due to my limited data I didn't split the data into the classical train, validation and test dataset.
+Instead I used [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)).
+In short: I split my 1298 chunks into five sets and trained my model on four of these sets.
+The fiths I used to obtrain validation metrics.
+I repeated this 5 times, so each subset is used as validation sets once.
+Stable metrics over all runs indicate that the model-dataset-combination is not prune to [overfitting](https://en.wikipedia.org/wiki/Overfitting), so it should be safe to train the model on the complete dataset for final deployment.
+
+# Results
+
+I run the training in the end on 1298 chunks (0.5s recordings) extracted from my dataset and used 25 boosted trees.
+Due to my balancing I got a 50:50 split between background and doorbell classes.
+Finally I got an [F1 Score](https://en.wikipedia.org/wiki/F-score) of 0.99 and also a precision of 0.99.
+These values are pretty good.
+NBt here's the catch: It didn't work out on my target platform.
+Once deployed the model always fired.
