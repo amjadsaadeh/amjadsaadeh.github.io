@@ -12,7 +12,9 @@ tags:
 draft: true
 ---
 
-So, training is THE thing, even though it's just a fraction of the work. But before we finally get to the training, we need to take care about data preprocessing first.
+It's been a while from my [last port](https://www.saadeh.dev/blog/002-doorbell-detector-datacollection/), but my doorbell detector is back.
+So, training is THE thing, even though it's just a fraction of the work.
+But before we finally get to the training, we need to take care about data preprocessing first.
 
 # Preprocessing
 
@@ -72,4 +74,7 @@ Due to my balancing I got a 50:50 split between background and doorbell classes.
 Finally I got an [F1 Score](https://en.wikipedia.org/wiki/F-score) of 0.99 and also a precision of 0.99.
 These values are pretty good.
 NBt here's the catch: It didn't work out on my target platform.
-Once deployed the model always fired.
+Once deployed, the model always detected doorbells no matter if there was one or not.
+I did some investigation, but didn't came to a conclusion before I temporarly abandoned this project.
+My assumptions ranged from numirical instabilities in my preprocessing (it was a bit painful to get is running on the raspberry pi zero, since a few libraries where not provided for armv6) to problems in my training procedure and data selection-
+In the end I decided to get back to the drawing board.
