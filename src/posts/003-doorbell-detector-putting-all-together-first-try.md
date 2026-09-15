@@ -32,5 +32,18 @@ These decisions are called "feature engineering". "Feature" because these new va
 How these features look like depends on the modality, the data distribution and also on the model you plan to use.
 Which features to take is also a continous task to assess during training.
 
-In this project I decided for [mel ceptrum features](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum), mainly because I heard about it and that it resembles 
-human like hearing by giving low frequency components more weight.
+In this project I decided for [mel ceptrum features](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum), mainly because it should resemble human hearing.
+In addition it results in less features than default [STFT (Shot Time Fourier Transform)](https://en.wikipedia.org/wiki/Short-time_Fourier_transform), which saves processing time and space further down the pipeline.
+
+# Training
+
+Lets get to the meat: training.
+There are a plenty of options on how to train and what to train.
+I decided to go with [XGBoost](https://xgboost.readthedocs.io/en/stable/), a widely used model type and library for machine learning.
+I won't point out the details here, but the idea is to build a bunch of [decision trees](https://en.wikipedia.org/wiki/Decision_tree) in a smart way (called gradient boosting).
+This way I (hopefully) get a proper predictor, which is able to determine the presence of a doorbell based in the features decribed above.
+
+To keep track of changes I introduced [MLFlow](https://mlflow.org/) into my setup.
+This is a tool to record training runs and save artifacts in a systematic fashion and is provides nice APIs to automatically do this for me.
+In addition I also tracked dataset information to make also 
+This way I can, at least, track down the dataset responsible for specific results.

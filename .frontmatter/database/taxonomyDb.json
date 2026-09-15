@@ -1,1 +1,13 @@
-{"taxonomy":{"tags":["audio","data collection","doorbell detector","homeassistant","machine learning","smart home"],"categories":[]}}
+{
+  "taxonomy": {
+    "categories": [],
+    "tags": [
+      "audio",
+      "data collection",
+      "doorbell detector",
+      "homeassistant",
+      "machine learning",
+      "smart home"
+    ]
+  }
+}
