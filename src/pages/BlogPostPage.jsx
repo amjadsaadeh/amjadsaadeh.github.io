@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useParams, useLocation, Link } from 'react-router-dom'
 import { colors, fonts } from '../theme'
 import FadeIn from '../components/FadeIn'
 import Navbar from '../components/Navbar'
@@ -27,7 +28,14 @@ function TagPill({ label }) {
 
 function BlogPostPage() {
   const { slug } = useParams()
+  const { hash } = useLocation()
   const post = getPostBySlug(slug)
+
+  // Jump to a heading anchor when arriving via a client-side link like /blog/post#section
+  useEffect(() => {
+    if (!hash) return
+    document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView()
+  }, [slug, hash])
 
   return (
     <div style={{ background: colors.bg, minHeight: '100vh', color: colors.text }}>

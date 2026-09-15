@@ -1,7 +1,40 @@
-import { marked } from 'marked'
+import { Marked } from 'marked'
 
 export function tagToSlug(tag) {
   return tag.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+}
+
+function headingToSlug(html) {
+  return html
+    .replace(/<[^>]*>/g, '')
+    .replace(/&[#\w]+;/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^\p{L}\p{N}\s-]/gu, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
+// Renders markdown and gives every heading a unique id plus a "#" link to it
+function renderMarkdown(content) {
+  const seen = new Map()
+  const md = new Marked({
+    renderer: {
+      heading({ tokens, depth }) {
+        const inner = this.parser.parseInline(tokens)
+        const base = headingToSlug(inner)
+        if (!base) return `<h${depth}>${inner}</h${depth}>\n`
+
+        const count = seen.get(base) || 0
+        seen.set(base, count + 1)
+        const id = count ? `${base}-${count}` : base
+
+        return `<h${depth} id="${id}">${inner}<a class="heading-anchor" href="#${id}" aria-label="Link to this section">#</a></h${depth}>\n`
+      },
+    },
+  })
+  return md.parse(content)
 }
 
 function parseTags(value) {
@@ -75,6 +108,6 @@ export function getPostBySlug(slug) {
     date: data.date || '',
     description: data.description || '',
     tags: parseTags(data.tags),
-    html: marked.parse(content),
+    html: renderMarkdown(content),
   }
 }
