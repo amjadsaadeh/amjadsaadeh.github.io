@@ -1,6 +1,6 @@
 ---
 title: Putting my Doorbell Detector together (first try)
-date: 2026-06-01T14:11:58.856Z
+date: 2026-09-16T07:43:09.075Z
 description: My first doorbell model scored an F1 of 0.95 on its test set and still detected doorbells all the time once deployed. Here is how I built it, and why that number was lying.
 tags:
   - doorbell detector
@@ -10,7 +10,7 @@ tags:
   - homeassistant
   - xgboost
   - dvc
-draft: true
+draft: false
 ---
 
 It's been a while since my [last post](https://www.saadeh.dev/blog/002-doorbell-detector-datacollection/), but my doorbell detector is back.
