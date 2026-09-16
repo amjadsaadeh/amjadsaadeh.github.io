@@ -74,12 +74,13 @@ Here's the ML lifecycle:
 
 <style>
 .dd-lifecycle {
-  --dd-bg-elevated: #161b22;
-  --dd-fg: #e6edf3;
-  --dd-muted: #6e7681;
-  --dd-accent: #5ddcb4;
-  --dd-accent-2: #f0883e;
-  --dd-border: #30363d;
+  --dd-bg: #faf9f4;
+  --dd-bg-elevated: #ffffff;
+  --dd-fg: #14181f;
+  --dd-muted: #8b909b;
+  --dd-accent: #0d8fab;
+  --dd-accent-2: #cf5f1c;
+  --dd-border: #e5e3da;
 
   position: relative;
   margin: 32px auto;
@@ -87,8 +88,9 @@ Here's the ML lifecycle:
   padding: 24px 18px 22px;
   background: var(--dd-bg);
   border: 1px solid var(--dd-border);
-  border-radius: 4px;
-  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
   color: var(--dd-fg);
   line-height: 1.4;
 }
@@ -104,7 +106,7 @@ Here's the ML lifecycle:
 .dd-lifecycle .stage {
   background: var(--dd-bg-elevated);
   border: 1px solid var(--dd-border);
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 12px 14px;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -113,7 +115,8 @@ Here's the ML lifecycle:
   align-items: baseline;
 }
 .dd-lifecycle .stage.feedback-source {
-  border-color: rgba(240, 136, 62, 0.55);
+  border-color: rgba(207, 95, 28, 0.5);
+  background: rgba(207, 95, 28, 0.04);
 }
 .dd-lifecycle .stage-num {
   color: var(--dd-muted);
