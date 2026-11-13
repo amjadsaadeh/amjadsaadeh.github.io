@@ -1,12 +1,12 @@
 ---
 title: Spare part printing with claude
-date: 2026-09-16T07:43:09.075Z
+date: 2026-11-13T13:34:33.437Z
 description: I got a small, but more complex part to print for my kids and I decided to give Claude Fable 5.2 a try in creating it for me.
 tags:
   - 3d printing
   - claude
   - ai agents
-draft: true
+draft: false.
 ---
 
 I am in 3d printing for a while and learned to tinker around with CAD software.
@@ -36,4 +36,13 @@ I did it on my smartphone, german autocorrect hit in from time to time and I don
 
 # The result
 
+After printing the result looks pretty good:
 
+![final result comparison](/blog-images/004/final-result-1.jpg)
+
+And it also fits, even though I need to disassemble the trailer a bit more then expected:
+
+![final result assembled](/blog-images/004/final-result-2.jpg)
+
+The experience was pretty smooth and saved me a lot of time, at least I assume that I would've need more time for designing by hand.
+I was also pretty impressed how well my instructions had been followed, despite my bad writing.
