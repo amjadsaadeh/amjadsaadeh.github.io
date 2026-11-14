@@ -1,5 +1,6 @@
 import { fonts, colors } from '../theme'
 import Navbar from '../components/Navbar'
+import BlackHole from '../components/BlackHole'
 
 function NotFoundPage() {
   return (
@@ -12,22 +13,11 @@ function NotFoundPage() {
       <Navbar />
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
-        <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <section style={{ paddingTop: 64, paddingBottom: 96 }}>
           <div style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.textMuted, marginBottom: 8 }}>
             &gt; cd ./this-page
           </div>
-          <div
-            style={{
-              fontFamily: fonts.mono,
-              fontSize: 96,
-              fontWeight: 600,
-              color: colors.accent,
-              lineHeight: 1,
-              marginBottom: 16,
-            }}
-          >
-            404
-          </div>
+          <BlackHole />
           <h1
             style={{
               fontFamily: fonts.sans,
