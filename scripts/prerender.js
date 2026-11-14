@@ -68,6 +68,15 @@ async function prerender() {
     console.log(`Pre-rendered: ${url}  →  dist/${outFile}`)
   }
 
+  // 4a. GitHub Pages serves dist/404.html (with a 404 status) for unknown paths.
+  // The client router hydrates at the real URL and the catch-all route matches.
+  const notFoundHtml = template
+    .replace('<!--ssr-outlet-->', render('/404'))
+    .replace('<title>Amjad Saadeh — saadeh.dev</title>', '<title>Page not found — saadeh.dev</title>')
+    .replace('</head>', '    <meta name="robots" content="noindex" />\n  </head>')
+  fs.writeFileSync(path.join(distPath, '404.html'), notFoundHtml)
+  console.log('Pre-rendered: 404  →  dist/404.html')
+
   // 5. Remove the server bundle (not needed at runtime)
   fs.rmSync(serverOutDir, { recursive: true, force: true })
 
