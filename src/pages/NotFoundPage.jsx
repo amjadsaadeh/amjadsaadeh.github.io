@@ -17,7 +17,6 @@ function NotFoundPage() {
           <div style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.textMuted, marginBottom: 8 }}>
             &gt; cd ./this-page
           </div>
-          <BlackHole />
           <h1
             style={{
               fontFamily: fonts.sans,
@@ -28,7 +27,7 @@ function NotFoundPage() {
               lineHeight: 1.15,
             }}
           >
-            Page not found
+            Not found
           </h1>
           <p
             style={{
@@ -40,9 +39,11 @@ function NotFoundPage() {
               maxWidth: 560,
             }}
           >
-            The page you are looking for does not exist or has moved. Try one of the links above,
-            or head back to the start.
+            You are lost in the void or got everything you were searching for. However, here is no content, just a black hole :)
           </p>
+          
+          <BlackHole />
+
           <a
             href="/"
             style={{
