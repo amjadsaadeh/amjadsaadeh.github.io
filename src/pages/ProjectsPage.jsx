@@ -150,7 +150,7 @@ function ProjectsPage() {
                   <a href="https://github.com/amjadsaadeh/doorbell-detector" target="_blank" rel="noreferrer" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
                     github.com →
                   </a>
-                  <a href="/blog/tag/doorbell-detector" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
+                  <a href="/blog/tag/doorbell-detector/" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
                     blog posts →
                   </a>
                   <MoreLink />

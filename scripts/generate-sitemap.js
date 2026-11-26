@@ -9,13 +9,13 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { canonicalFor } from './site.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
 const distPath = path.join(root, 'dist')
 const postsPath = path.join(root, 'src', 'posts')
 
-const SITE_URL = 'https://www.saadeh.dev'
 
 function tagToSlug(tag) {
   return tag.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
@@ -35,6 +35,7 @@ function parseFrontmatter(raw) {
   const closeIndex = lines.findIndex((l, i) => i > 0 && l.trim() === '---')
   if (closeIndex === -1) return { date: '', tags: [] }
   let date = ''
+  let canonical = ''
   let tags = []
   let lastKey = null
   for (const line of lines.slice(1, closeIndex)) {
@@ -46,10 +47,11 @@ function parseFrontmatter(raw) {
       lastKey = line.slice(0, colon).trim()
       const value = line.slice(colon + 1).trim()
       if (lastKey === 'date') date = value
+      if (lastKey === 'canonical') canonical = value
       if (lastKey === 'tags' && value) tags = value.split(',').map(t => t.trim()).filter(Boolean)
     }
   }
-  return { date, tags }
+  return { date, tags, canonical }
 }
 
 function collectPosts() {
@@ -60,8 +62,8 @@ function collectPosts() {
     .map((file) => {
       const raw = fs.readFileSync(path.join(postsPath, file), 'utf-8')
       const slug = file.replace(/\.md$/, '')
-      const { date, tags } = parseFrontmatter(raw)
-      return { slug, date, tags }
+      const { date, tags, canonical } = parseFrontmatter(raw)
+      return { slug, date, tags, canonical }
     })
 }
 
@@ -84,7 +86,7 @@ function generate() {
     const lastmod = route.path === '/blog' && latestPostDate ? latestPostDate : today
     entries.push(
       urlEntry({
-        loc: `${SITE_URL}${route.path}`,
+        loc: canonicalFor(route.path),
         lastmod,
         changefreq: route.changefreq,
         priority: route.priority,
@@ -95,7 +97,7 @@ function generate() {
   for (const post of posts) {
     entries.push(
       urlEntry({
-        loc: `${SITE_URL}/blog/${post.slug}`,
+        loc: post.canonical || canonicalFor(`/blog/${post.slug}`),
         lastmod: post.date || today,
         changefreq: 'yearly',
         priority: '0.7',
@@ -107,7 +109,7 @@ function generate() {
   for (const tag of uniqueTags) {
     entries.push(
       urlEntry({
-        loc: `${SITE_URL}/blog/tag/${tagToSlug(tag)}`,
+        loc: canonicalFor(`/blog/tag/${tagToSlug(tag)}`),
         lastmod: today,
         changefreq: 'weekly',
         priority: '0.6',

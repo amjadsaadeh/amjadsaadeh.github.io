@@ -8,7 +8,7 @@ import { allPosts, tagToSlug } from '../lib/posts'
 function TagPill({ label }) {
   return (
     <Link
-      to={`/blog/tag/${tagToSlug(label)}`}
+      to={`/blog/tag/${tagToSlug(label)}/`}
       style={{
         fontFamily: fonts.mono,
         fontSize: 9,
@@ -54,7 +54,7 @@ function PostCard({ post }) {
       </div>
 
       <a
-        href={`/blog/${post.slug}`}
+        href={`/blog/${post.slug}/`}
         style={{
           fontFamily: fonts.sans,
           fontSize: 18,
@@ -92,7 +92,7 @@ function PostCard({ post }) {
       )}
 
       <a
-        href={`/blog/${post.slug}`}
+        href={`/blog/${post.slug}/`}
         style={{
           fontFamily: fonts.mono,
           fontSize: 11,
