@@ -8,7 +8,7 @@ import { getPostBySlug, tagToSlug } from '../lib/posts'
 function TagPill({ label }) {
   return (
     <Link
-      to={`/blog/tag/${tagToSlug(label)}`}
+      to={`/blog/tag/${tagToSlug(label)}/`}
       style={{
         fontFamily: fonts.mono,
         fontSize: 9,
@@ -54,7 +54,7 @@ function BlogPostPage() {
                 Post not found.
               </p>
               <a
-                href="/blog"
+                href="/blog/"
                 style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.accent, textDecoration: 'none' }}
               >
                 ← back to writing
@@ -121,7 +121,7 @@ function BlogPostPage() {
 
             <div style={{ marginBottom: 32 }}>
               <a
-                href="/blog"
+                href="/blog/"
                 style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.accent, textDecoration: 'none' }}
               >
                 ← back to writing

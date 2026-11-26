@@ -134,7 +134,7 @@ function HomePage() {
               drives me is the moment where scientific ideas become something tangible and useful.
             </p>
             <a
-              href="/about"
+              href="/about/"
               style={{
                 fontFamily: fonts.mono,
                 fontSize: 13,
@@ -274,7 +274,7 @@ function HomePage() {
                   <a href="https://github.com/amjadsaadeh/doorbell-detector" target="_blank" rel="noreferrer" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
                     github.com →
                   </a>
-                  <a href="/blog/tag/doorbell-detector" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
+                  <a href="/blog/tag/doorbell-detector/" style={{ fontFamily: fonts.mono, fontSize: 10, color: colors.accent, textDecoration: 'none', opacity: 0.65, letterSpacing: '0.08em' }}>
                     blog posts →
                   </a>
                 </div>
@@ -358,7 +358,7 @@ function HomePage() {
             {/* All projects link */}
             <div style={{ textAlign: 'right', marginBottom: 12 }}>
               <a
-                href="/projects"
+                href="/projects/"
                 style={{
                   fontFamily: fonts.mono,
                   fontSize: 12,
@@ -656,7 +656,7 @@ function HomePage() {
               />
             </div>
             <a
-              href="/about#career-timeline"
+              href="/about/#career-timeline"
               style={{
                 fontFamily: fonts.mono,
                 fontSize: 13,

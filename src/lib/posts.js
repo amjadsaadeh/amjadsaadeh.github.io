@@ -78,6 +78,7 @@ export const allPosts = Object.entries(modules)
       title: data.title || slug,
       date: data.date || '',
       description: data.description || '',
+      canonical: data.canonical || '',
       tags: parseTags(data.tags),
     }
   })

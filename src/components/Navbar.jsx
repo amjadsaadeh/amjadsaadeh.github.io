@@ -29,10 +29,10 @@ function Navbar({ activePage }) {
         </span>
         <div style={{ display: 'flex', gap: 24 }}>
           <NavLink href="/" active={activePage === 'home'}>home</NavLink>
-          <NavLink href="/about" active={activePage === 'about'}>about</NavLink>
-          <NavLink href="/projects" active={activePage === 'projects'}>projects</NavLink>
-          <NavLink href="/contact" active={activePage === 'contact'}>contact</NavLink>
-          <NavLink href="/blog" active={activePage === 'blog'}>blog</NavLink>
+          <NavLink href="/about/" active={activePage === 'about'}>about</NavLink>
+          <NavLink href="/projects/" active={activePage === 'projects'}>projects</NavLink>
+          <NavLink href="/contact/" active={activePage === 'contact'}>contact</NavLink>
+          <NavLink href="/blog/" active={activePage === 'blog'}>blog</NavLink>
         </div>
       </div>
     </nav>
